@@ -1,0 +1,169 @@
+---
+
+---
+
+<footer id="footer">
+    <div class="footer-container">
+        <h1 class="footer-logo">CambiaZo</h1>
+        <div class="footer-bottom">
+            <p class="rights">All rights reserved © 2024. TechZo</p>
+            <div class="footer-right">
+                <div class="footer-links">
+                    <a href="#">Support</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Releases</a>
+                </div>
+                <div class="social-icons">
+                    <img src="/assets/images/icons/icon-facebook.png" alt="Facebook" class="social-icon" />
+                    <img src="/assets/images/icons/icon-twitter.png" alt="Twitter" class="social-icon" />
+                    <img src="/assets/images/icons/icon-youtube.png" alt="YouTube" class="social-icon" />
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<style>
+    #footer {
+        background-color: #18181b;
+        padding: 30px 0;
+        color: #fff;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 5vw;
+    }
+
+    .footer-logo {
+        font-size: 13rem;
+        font-weight: bold;
+        margin: 3rem auto;
+        line-height: 1;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 30px;
+        padding-top: 15px;
+        border-top: 1px solid #333;
+    }
+
+    .rights {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 30px;
+    }
+
+    .footer-links a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+        color: #FFD146;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .social-icon {
+        width: 30px;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .social-icon:hover {
+        transform: scale(1.1);
+    }
+
+    @media (max-width: 1024px) {
+        #footer .footer-logo {
+            font-size: 6rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        /* Estilos existentes */
+        .footer-bottom {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-right {
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .footer-links {
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .social-icons {
+            justify-content: center;
+        }
+
+        #footer .footer-logo {
+            font-size: 5rem;
+        }
+
+        .rights {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #footer {
+            margin-top: auto;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #footer .footer-logo {
+            font-size: 3rem;
+        }
+
+        .footer-links a {
+            font-size: 1rem;
+        }
+
+        .rights {
+            font-size: 1rem;
+        }
+    }
+
+
+</style>
