@@ -3,10 +3,463 @@ import Layout from '../layouts/Layout.astro';
 import Header from "../components/header-content/Header.astro";
 ---
 
-<Layout title="CambiaZo">
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const ongSlider = document.querySelector('.ong-testimonials') as HTMLElement;
+        let isDragging = false;
+        let startX: number;
+        let scrollLeft: number;
 
+        ongSlider.addEventListener('mousedown', (e: MouseEvent) => {
+            isDragging = true;
+            startX = e.pageX - ongSlider.offsetLeft;
+            scrollLeft = ongSlider.scrollLeft;
+            ongSlider.classList.add('active');
+        });
+
+        ongSlider.addEventListener('mouseleave', () => {
+            isDragging = false;
+            ongSlider.classList.remove('active');
+        });
+
+        ongSlider.addEventListener('mouseup', () => {
+            isDragging = false;
+            ongSlider.classList.remove('active');
+        });
+
+        // Evento para el movimiento del mouse
+        ongSlider.addEventListener('mousemove', (e: MouseEvent) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - ongSlider.offsetLeft;
+            const scroll = (x - startX) * 1.5;
+            ongSlider.scrollLeft = scrollLeft - scroll;
+        });
+
+        // Eventos para soporte táctil
+        ongSlider.addEventListener('touchstart', (e: TouchEvent) => {
+            isDragging = true;
+            startX = e.touches[0].pageX - ongSlider.offsetLeft;
+            scrollLeft = ongSlider.scrollLeft;
+            ongSlider.classList.add('active');
+        });
+
+        ongSlider.addEventListener('touchend', () => {
+            isDragging = false;
+            ongSlider.classList.remove('active');
+        });
+
+        ongSlider.addEventListener('touchmove', (e: TouchEvent) => {
+            if (!isDragging) return;
+            const x = e.touches[0].pageX - ongSlider.offsetLeft;
+            const scroll = (x - startX) * 1.5;
+            ongSlider.scrollLeft = scrollLeft - scroll;
+        });
+    });
+
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slides = document.querySelectorAll('.slide');
+        const nextButton = document.querySelector('.slider-next') as HTMLElement | null;
+        const prevButton = document.querySelector('.slider-prev') as HTMLElement | null;
+        let currentSlide = 0;
+
+        const updateSlide = () => {
+            slides.forEach((slide) => {
+                const slideElement = slide as HTMLElement;
+                slideElement.style.display = 'none';
+            });
+
+            const currentSlideElement = slides[currentSlide] as HTMLElement;
+            currentSlideElement.style.display = 'flex';
+        };
+
+        if (nextButton && prevButton) {
+            nextButton.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateSlide();
+            });
+
+            prevButton.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                updateSlide();
+            });
+        } else {
+            console.error('Botones de navegación no encontrados.');
+        }
+
+        updateSlide();
+    });
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const carouselWrapper = document.querySelector('.carousel-wrapper') as HTMLElement;
+        const swipeIndicator = document.querySelector('.swipe-indicator') as HTMLElement;
+        if (!carouselWrapper) {
+            console.error('carousel-wrapper no encontrado.');
+            return;
+        }
+        let isDown = false;
+        let startX: number;
+        let scrollLeft: number;
+
+        const startDragging = (e: MouseEvent | TouchEvent) => {
+            isDown = true;
+            carouselWrapper.classList.add('active');
+            startX = (e instanceof TouchEvent ? e.touches[0].pageX : e.pageX) - carouselWrapper.offsetLeft;
+            scrollLeft = carouselWrapper.scrollLeft;
+
+            if (swipeIndicator) {
+                swipeIndicator.style.display = 'none';
+            }
+        };
+
+        const stopDragging = () => {
+            isDown = false;
+            carouselWrapper.classList.remove('active');
+        };
+
+        const moveDragging = (e: MouseEvent | TouchEvent) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = (e instanceof TouchEvent ? e.touches[0].pageX : e.pageX) - carouselWrapper.offsetLeft;
+            const walk = (x - startX) * 2;
+            carouselWrapper.scrollLeft = scrollLeft - walk;
+        };
+
+        const isMobile = window.innerWidth <= 767;
+
+        if (isMobile) {
+            carouselWrapper.addEventListener('mousedown', startDragging);
+            carouselWrapper.addEventListener('touchstart', startDragging);
+
+            carouselWrapper.addEventListener('mouseleave', stopDragging);
+            carouselWrapper.addEventListener('mouseup', stopDragging);
+            carouselWrapper.addEventListener('touchend', stopDragging);
+
+            carouselWrapper.addEventListener('mousemove', moveDragging);
+            carouselWrapper.addEventListener('touchmove', moveDragging);
+        }
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const carouselWrapper = document.querySelector('.carousel-wrapper') as HTMLElement;
+        const carousel = document.querySelector('.carousel') as HTMLElement;
+        const carouselItems = document.querySelectorAll('.carousel-item') as NodeListOf<HTMLElement>;
+        const prevButton = document.querySelector('.carousel-prev') as HTMLElement;
+        const nextButton = document.querySelector('.carousel-next') as HTMLElement;
+        const swipeIndicator = document.querySelector('.swipe-indicator') as HTMLElement;
+
+        if (!carouselWrapper || !carousel || !prevButton || !nextButton || carouselItems.length === 0) {
+            console.error('Elementos del carrusel no encontrados.');
+            return;
+        }
+
+        const itemWidth = carouselItems[0].offsetWidth + 20; // 20 es el margen derecho entre items
+
+        nextButton.addEventListener('click', () => {
+            carouselWrapper.scrollBy({
+                left: itemWidth,
+                behavior: 'smooth'
+            });
+        });
+
+        prevButton.addEventListener('click', () => {
+            carouselWrapper.scrollBy({
+                left: -itemWidth,
+                behavior: 'smooth'
+            });
+        });
+
+        let isDown = false;
+        let startX: number;
+        let scrollLeft: number;
+
+        const startDragging = (e: MouseEvent | TouchEvent) => {
+            isDown = true;
+            carouselWrapper.classList.add('active');
+            startX = (e instanceof TouchEvent ? e.touches[0].pageX : e.pageX) - carouselWrapper.offsetLeft;
+            scrollLeft = carouselWrapper.scrollLeft;
+
+            if (swipeIndicator) {
+                swipeIndicator.style.display = 'none';
+            }
+        };
+
+        const stopDragging = () => {
+            isDown = false;
+            carouselWrapper.classList.remove('active');
+        };
+
+        const moveDragging = (e: MouseEvent | TouchEvent) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = (e instanceof TouchEvent ? e.touches[0].pageX : e.pageX) - carouselWrapper.offsetLeft;
+            const walk = (x - startX) * 2; // Ajusta la velocidad de desplazamiento
+            carouselWrapper.scrollLeft = scrollLeft - walk;
+        };
+
+        const isMobile = window.innerWidth <= 767;
+
+        if (isMobile) {
+            carouselWrapper.addEventListener('mousedown', startDragging);
+            carouselWrapper.addEventListener('touchstart', startDragging);
+
+            carouselWrapper.addEventListener('mouseleave', stopDragging);
+            carouselWrapper.addEventListener('mouseup', stopDragging);
+            carouselWrapper.addEventListener('touchend', stopDragging);
+
+            carouselWrapper.addEventListener('mousemove', moveDragging);
+            carouselWrapper.addEventListener('touchmove', moveDragging);
+        }
+    });
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const ongSlider = document.querySelector('.ong-testimonials') as HTMLElement;
+        const ongItems = document.querySelectorAll('.ong-item') as NodeListOf<HTMLElement>;
+        const totalSlides = ongItems.length;
+        const radios = document.querySelectorAll('input[name="ong-testimonial"]') as NodeListOf<HTMLInputElement>;
+        let isDragging = false;
+        let startX = 0;
+        let currentIndex = Array.from(radios).findIndex((radio: HTMLInputElement) => radio.checked);
+        const threshold = 50;
+
+        const changeSlide = (direction: 'next' | 'prev') => {
+            if (direction === 'next') {
+                currentIndex = (currentIndex + 1) % totalSlides;
+            } else if (direction === 'prev') {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            }
+            radios[currentIndex].checked = true;
+        };
+
+        const onDragStart = (e: MouseEvent | TouchEvent) => {
+            isDragging = true;
+            startX = e.type.includes('touch')
+                ? (e as TouchEvent).touches[0].clientX
+                : (e as MouseEvent).clientX;
+        };
+
+        const onDragEnd = (e: MouseEvent | TouchEvent) => {
+            if (!isDragging) return;
+            isDragging = false;
+            const endX = e.type.includes('touch')
+                ? (e as TouchEvent).changedTouches[0].clientX
+                : (e as MouseEvent).clientX;
+            const deltaX = endX - startX;
+            if (Math.abs(deltaX) > threshold) {
+                if (deltaX < 0) {
+                    changeSlide('next');
+                } else {
+                    changeSlide('prev');
+                }
+            }
+        };
+
+        ongSlider.addEventListener('mousedown', onDragStart);
+        ongSlider.addEventListener('touchstart', onDragStart);
+
+        ongSlider.addEventListener('mouseup', onDragEnd);
+        ongSlider.addEventListener('touchend', onDragEnd);
+
+        ongSlider.addEventListener('mouseleave', () => {
+            isDragging = false;
+        });
+
+        const preventDefault = (e: MouseEvent | TouchEvent) => {
+            if (isDragging) e.preventDefault();
+        };
+
+        ongSlider.addEventListener('mousemove', preventDefault);
+        ongSlider.addEventListener('touchmove', preventDefault);
+
+        radios.forEach((radio: HTMLInputElement, index) => {
+            radio.addEventListener('change', () => {
+                if (radio.checked) {
+                    currentIndex = index;
+                }
+            });
+        });
+    });
+</script>
+
+<Layout title="CambiaZo">
+    <Header />
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Más que un Intercambio</h1>
+            <p class="hero-description">
+                CambiaZo te permite dar nueva vida a tus objetos mientras intercambias y donas para un mundo más sostenible. ¡Únete!
+            </p>
+            <div class="play-store-button-container">
+                <a href="https://play.google.com/store" target="_blank">
+                    <button class="hero-button">
+                        <img src="/assets/images/icons/playstore.png" alt="Play Store" class="play-store-icon"/>Intercambia ahora
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="/assets/images/hero/hero-img.png" alt="CambiaZo App Image">
+        </div>
+    </section>
 </Layout>
 
 <style>
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    /*-----------------------------------------------------------------------------------------------------------*/
+    /*-----------------------------------------------------------------------------------------------------------*/
+    /* Hero Section */
+
+    .hero {
+        background-color: #ffd146;
+        padding: 35px 20px;
+        gap: 40px;
+    }
+
+    .hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .hero-description {
+        font-size: 1.2rem;
+    }
+
+    .hero-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+        background-color: black;
+        color: white;
+        font-weight: 550;
+        font-size: 1.2rem;
+        padding: 20px 30px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-family: 'Consolas', monospace;
+    }
+
+    .hero-button:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+    }
+
+    .play-store-icon {
+        width: 30px;
+        height: auto;
+    }
+
+    .hero-image img {
+        height: 95vh;
+        border-radius: 15px;
+    }
+
+    @media (min-width: 768px) {
+        .hero {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-title,
+        .hero-description,
+        .hero-button {
+            font-family: 'Consolas', monospace;
+            margin-left: 13rem;
+            text-align: left;
+        }
+
+        .section-container {
+            margin-left: 7.5rem;
+            margin-right: 7.5rem;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .hero-title,
+        .hero-description,
+        .hero-button {
+            margin-left: 0;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 1.2rem;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+        }
+
+        .hero-button {
+            font-size: 1rem;
+            padding: 15px 20px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            margin-top: -80px;
+            position: relative;
+            top: 70px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-title {
+            margin-top: 7rem;
+        }
+
+        .hero-button {
+            font-size: 0.9rem;
+            padding: 15px 30px;
+        }
+    }
 
 </style>
