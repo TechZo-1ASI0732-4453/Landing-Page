@@ -1,0 +1,48 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/images/icons/cambiazo-icon.ico" type="image/x-icon">
+    <title>CambiaZo</title>
+</head>
+<body>
+<header class="header">
+    <div class="header-content">
+        <div class="logo">
+            <a href="/">
+                <img src="/assets/logo/cambiazo_logo.png" alt="CambiaZo" width="190px"/>
+            </a>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#features">Nosotros</a></li>
+                <li><a href="#cards">Características</a></li>
+                <li><a href="#plans">Planes</a></li>
+                <li><a href="#contact-us">Contáctanos</a></li>
+            </ul>
+        </nav>
+        <div class="header-button">
+            <a href="https://play.google.com/store" class="button">Descarga Ahora!</a>
+        </div>
+        <div class="menu-icon">
+            <img src="/assets/images/icons/menu-icon.png" alt="Menu Icon">
+        </div>
+    </div>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuIcon = document.querySelector('.menu-icon') as HTMLElement | null;
+        const navbar = document.querySelector('.navbar') as HTMLElement | null;
+
+        if (menuIcon && navbar) {
+            menuIcon.addEventListener('click', () => {
+                navbar.classList.toggle('active');
+            });
+        } else {
+            console.error('menuIcon o navbar no encontrados.');
+        }
+    });
+</script>
+
+
+</body>
