@@ -312,6 +312,108 @@ import Header from "../components/header-content/Header.astro";
             <img src="/assets/images/hero/hero-img.png" alt="CambiaZo App Image">
         </div>
     </section>
+
+
+
+    <section id="features" >
+        <h2 style="margin-top: 6.5rem">Sobre Nosotros</h2>
+        <p class="p-1">Descubre quienes son los responsables de que CambiaZo sea una realidad.</p>
+        <section id="about-us">
+            <div class="slider">
+                <!-- Pantalla 1: Información de la Startup -->
+                <div class="slide active-slide">
+                    <div class="about-content">
+                        <div class="about-info">
+                            <h1 class="quienes-somos-h2">¿Quiénes Somos?</h1>
+                            <p>
+                                CambiaZo es una plataforma innovadora que permite a las personas intercambiar y donar objetos que ya no usan.
+                                Nuestro objetivo es promover un estilo de vida más sostenible, donde cada objeto tenga un propósito y un impacto positivo.
+                            </p>
+                        </div>
+                        <div class="about-video">
+                            <img src="/assets/images/about-us/cartel-vertical.png" alt="Cartel Vertical" width="80%" height="100%">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Pantalla 2: Cards de miembros -->
+                <div class="slide">
+                    <div class="about-cards">
+                        <a href="https://www.linkedin.com/in/ian-santisteban-palomino/" target="_blank" class="about-card">
+                            <img src="/assets/images/about-us/IanSantisteban.png" alt="Ian">
+                            <h3>Ian Santisteban</h3>
+                            <p class="role">Scrum Master</p>
+                            <p>Ian tiene una amplia experiencia en la gestión de equipos ágiles y optimización de procesos.</p>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jeremyquispe/" target="_blank" class="about-card">
+                            <img src="/assets/images/about-us/JeremyQuispe.jpeg" alt="Jeremy">
+                            <h3>Jeremy Quispe</h3>
+                            <p class="role">Product Owner</p>
+                            <p>Jeremy se especializa en la planificación estratégica y la coordinación de proyectos tecnológicos.</p>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mathias-mendoza-carri%C3%B3n-08369632b/" target="_blank" class="about-card">
+                            <img src="/assets/images/about-us/MathiasMendoza.png" alt="Mathias">
+                            <h3>Mathias Mendoza</h3>
+                            <p class="role">Developer</p>
+                            <p>Mathias es un desarrollador apasionado por crear soluciones innovadoras y eficientes.</p>
+                        </a>
+                        <a href="https://www.linkedin.com/in/joseph-huamani-mandujano/" target="_blank" class="about-card">
+                            <img src="/assets/images/about-us/JosephHuamani.png" alt="Joseph">
+                            <h3>Joseph Huamani</h3>
+                            <p class="role">Developer</p>
+                            <p>Joseph destaca por su habilidad en el desarrollo de aplicaciones escalables y robustas.</p>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Controles del Slider -->
+                <div class="slider-controls">
+                    <button class="slider-prev">&#10094;</button>
+                    <button class="slider-next">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="separating-line"></div>
+
+        <h2 id="cards" style="margin-top: 5rem;">Descubre las ventajas de ser parte de nuestra comunidad</h2>
+        <p class="p-1">Explora cómo puedes intercambiar o donar objetos a través de nuestra app.</p>
+        <div class="feature-cards"  style="margin-bottom: 7rem">
+            <div class="card blue-card">
+                <div class="content">
+                    <div class="title-icon">
+                        <img src="/assets/images/cards/icons/icon-exchange.png" alt="Intercambio Icon" class="icon" />
+                        <h3>Intercambios</h3>
+                    </div>
+                    <p>Accede a una red confiable donde puedes intercambiar bienes de manera rápida y segura.</p>
+                </div>
+                <div class="image-container group">
+                    <div class="card-image" style="background-image: url('/assets/images/cards/intercambio1.png'); "></div>
+                    <div class="card-image" style="background-image: url('/assets/images/cards/intercambio2.png');"></div>
+                    <div class="card-image" style="background-image: url('/assets/images/cards/intercambio3.png');"></div>
+                    <div class="card-image fourth" style="background-image: url('/assets/images/cards/intercambio4.png'); height: 20rem"></div>
+                </div>
+            </div>
+            <div class="card yellow-card">
+                <div class="content">
+                    <div class="title-icon">
+                        <img src="/assets/images/cards/icons/icon-donate.png" alt="Donacion Icon" class="icon" />
+                        <h3>Donaciones</h3>
+                    </div>
+                    <p>Ayuda a quienes más lo necesitan donando artículos en buen estado que ya no usas.</p>
+                </div>
+                <div class="image-container group" >
+                    <div class="card-image" style="background-image: url('/assets/images/cards/donaciones1.png');"></div>
+                    <div class="card-image" style="background-image: url('/assets/images/cards/donaciones2.png');"></div>
+                    <div class="card-image" style="background-image: url('/assets/images/cards/donaciones3.png');"></div>
+                    <div class="card-image fourth" style="background-image: url('/assets/images/cards/donaciones4.png');height: 20rem"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </Layout>
 
 <style>
