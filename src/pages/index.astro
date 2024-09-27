@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from "../components/header-content/Header.astro";
+import Footer from "../components/footer-content/Footer.astro";
 ---
 
 <script>
@@ -627,6 +628,8 @@ import Header from "../components/header-content/Header.astro";
             </div>
         </section>
     </div>
+
+    <Footer></Footer>
 
 </Layout>
 
@@ -1882,6 +1885,12 @@ import Header from "../components/header-content/Header.astro";
         transform: translateY(-10px);
         box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
     }
+
+    .form-group.email input {
+        width: 50rem;
+    }
+
+
 
 
     .contact-container:hover {
