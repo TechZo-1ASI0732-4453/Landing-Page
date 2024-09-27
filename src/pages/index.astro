@@ -462,6 +462,96 @@ import Header from "../components/header-content/Header.astro";
         </div>
     </section>
 
+    <section id="principal-items">
+        <div class="main-content">
+            <div class="text-section">
+                <h1>Intercambios Sostenibles, <span class="highlight">Simplificados</span></h1>
+                <p>
+                    Con CambiaZo, puedes intercambiar, donar y conectar con usuarios para promover un estilo de vida sostenible, donde el valor de cada artículo sigue fluyendo.
+                </p>
+            </div>
+            <div class="icons-section">
+                <div class="icon-item">
+                    <img src="/assets/images/icons/escudo-icon.png" alt="Seguridad" class="icon"/>
+                    <h3>Seguridad</h3>
+                    <p>Intercambia y dona en un entorno seguro.</p>
+                </div>
+                <div class="icon-item">
+                    <img src="/assets/images/icons/exchange-icon.png" alt="Artículos" class="icon"/>
+                    <h3>Artículos</h3>
+                    <p>Gran variedad de artículos de distintas categorías.</p>
+                </div>
+                <div class="icon-item">
+                    <img src="/assets/images/icons/comunidad-icon.png" alt="Comunidad" class="icon"/>
+                    <h3>Comunidad</h3>
+                    <p>Conéctate con usuarios que comparten e impulsan.</p>
+                </div>
+                <div class="icon-item">
+                    <img src="/assets/images/icons/sostenible-icon.png" alt="Sostenible" class="icon"/>
+                    <h3>Sostenible</h3>
+                    <p>Reduce la huella de carbono con cada intercambio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="ONGs" class="ongs-section">
+        <div class="separating-line"></div>
+
+        <div class="container-ong">
+
+            <h2>Nuestras ONGs afiliadas</h2>
+            <p>
+                Contamos con una variedad muy amplia de organizaciones benéficas unidas por el desarrollo sostenible y la contribución con la mayoría de la sociedad peruana.
+            </p>
+
+            <div class="ong-slider">
+                <input type="radio" name="ong-testimonial" id="ong-1" />
+                <input type="radio" name="ong-testimonial" id="ong-2" />
+                <input type="radio" name="ong-testimonial" id="ong-3" checked />
+                <input type="radio" name="ong-testimonial" id="ong-4" />
+                <input type="radio" name="ong-testimonial" id="ong-5" />
+
+                <div class="ong-testimonials mb-8">
+                    <label class="ong-item" for="ong-1">
+                        <div class="ong-card">
+                            <img src="/assets/images/ongs/asppa.png" alt="ONG 1" class="ong-cardimg" />
+                        </div>
+                    </label>
+                    <label class="ong-item" for="ong-2">
+                        <div class="ong-card">
+                            <img src="/assets/images/ongs/care.png" alt="ONG 2" class="ong-cardimg" />
+                        </div>
+                    </label>
+                    <label class="ong-item" for="ong-3">
+                        <div class="ong-card">
+                            <img src="/assets/images/ongs/ensenaperu.png" alt="ONG 3" class="ong-cardimg" />
+                        </div>
+                    </label>
+                    <label class="ong-item" for="ong-4">
+                        <div class="ong-card">
+                            <img src="/assets/images/ongs/fundacion_calma.png" alt="ONG 4" class="ong-cardimg" />
+                        </div>
+                    </label>
+                    <label class="ong-item" for="ong-5">
+                        <div class="ong-card">
+                            <img src="/assets/images/ongs/d1.png" alt="ONG 5" class="ong-cardimg" />
+                        </div>
+                    </label>
+                </div>
+
+                <div class="ong-dots">
+                    <label for="ong-1"></label>
+                    <label for="ong-2"></label>
+                    <label for="ong-3"></label>
+                    <label for="ong-4"></label>
+                    <label for="ong-5"></label>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </Layout>
 
 <style>
@@ -1026,6 +1116,10 @@ import Header from "../components/header-content/Header.astro";
             font-size: 2rem;
         }
     }
+
+    /*-----------------------------------------------------------------------------------------------------------*/
+    /*-----------------------------------------------------------------------------------------------------------*/
+    /*  */
 
 
 </style>
