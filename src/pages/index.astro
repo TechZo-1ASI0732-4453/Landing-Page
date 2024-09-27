@@ -312,6 +312,322 @@ import Header from "../components/header-content/Header.astro";
             <img src="/assets/images/hero/hero-img.png" alt="CambiaZo App Image">
         </div>
     </section>
+
+
+
+    <section id="features" >
+        <h2 style="margin-top: 6.5rem">Sobre Nosotros</h2>
+        <p class="p-1">Descubre quienes son los responsables de que CambiaZo sea una realidad.</p>
+        <section id="about-us">
+            <div class="slider">
+                <!-- Pantalla 1: Información de la Startup -->
+                <div class="slide active-slide">
+                    <div class="about-content">
+                        <div class="about-info">
+                            <h1 class="quienes-somos-h2">¿Quiénes Somos?</h1>
+                            <p>
+                                CambiaZo es una plataforma innovadora que permite a las personas intercambiar y donar objetos que ya no usan.
+                                Nuestro objetivo es promover un estilo de vida más sostenible, donde cada objeto tenga un propósito y un impacto positivo.
+                            </p>
+                        </div>
+                        <div class="about-video">
+                            <img src="/assets/images/about-us/cartel-vertical.png" alt="Cartel Vertical" width="80%" height="100%">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Pantalla 2: Cards de miembros -->
+                <div class="slide">
+                    <div class="about-cards">
+                        <a href="https://www.linkedin.com/in/ian-santisteban-palomino/" target="_blank" class="about-card">
+                            <img src="/assets/images/about-us/IanSantisteban.png" alt="Ian">
+                            <h3>Ian Santisteban</h3>
+                            <p class="role">Scrum Master</p>
+                            <p>Ian tiene una amplia experiencia en la gestión de equipos ágiles y optimización de procesos.</p>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jeremyquispe/" target="_blank" class="about-card">
+                            <img src="/assets/images/about-us/JeremyQuispe.jpeg" alt="Jeremy">
+                            <h3>Jeremy Quispe</h3>
+                            <p class="role">Product Owner</p>
+                            <p>Jeremy se especializa en la planificación estratégica y la coordinación de proyectos tecnológicos.</p>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mathias-mendoza-carri%C3%B3n-08369632b/" target="_blank" class="about-card">
+                            <img src="/assets/images/about-us/MathiasMendoza.png" alt="Mathias">
+                            <h3>Mathias Mendoza</h3>
+                            <p class="role">Developer</p>
+                            <p>Mathias es un desarrollador apasionado por crear soluciones innovadoras y eficientes.</p>
+                        </a>
+                        <a href="https://www.linkedin.com/in/joseph-huamani-mandujano/" target="_blank" class="about-card">
+                            <img src="/assets/images/about-us/JosephHuamani.png" alt="Joseph">
+                            <h3>Joseph Huamani</h3>
+                            <p class="role">Developer</p>
+                            <p>Joseph destaca por su habilidad en el desarrollo de aplicaciones escalables y robustas.</p>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Controles del Slider -->
+                <div class="slider-controls">
+                    <button class="slider-prev">&#10094;</button>
+                    <button class="slider-next">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="separating-line"></div>
+
+        <h2 id="cards" style="margin-top: 5rem;">Descubre las ventajas de ser parte de nuestra comunidad</h2>
+        <p class="p-1">Explora cómo puedes intercambiar o donar objetos a través de nuestra app.</p>
+        <div class="feature-cards"  style="margin-bottom: 7rem">
+            <div class="card blue-card">
+                <div class="content">
+                    <div class="title-icon">
+                        <img src="/assets/images/cards/icons/icon-exchange.png" alt="Intercambio Icon" class="icon" />
+                        <h3>Intercambios</h3>
+                    </div>
+                    <p>Accede a una red confiable donde puedes intercambiar bienes de manera rápida y segura.</p>
+                </div>
+                <div class="image-container group">
+                    <div class="card-image" style="background-image: url('/assets/images/cards/intercambio1.png'); "></div>
+                    <div class="card-image" style="background-image: url('/assets/images/cards/intercambio2.png');"></div>
+                    <div class="card-image" style="background-image: url('/assets/images/cards/intercambio3.png');"></div>
+                    <div class="card-image fourth" style="background-image: url('/assets/images/cards/intercambio4.png'); height: 20rem"></div>
+                </div>
+            </div>
+            <div class="card yellow-card">
+                <div class="content">
+                    <div class="title-icon">
+                        <img src="/assets/images/cards/icons/icon-donate.png" alt="Donacion Icon" class="icon" />
+                        <h3>Donaciones</h3>
+                    </div>
+                    <p>Ayuda a quienes más lo necesitan donando artículos en buen estado que ya no usas.</p>
+                </div>
+                <div class="image-container group" >
+                    <div class="card-image" style="background-image: url('/assets/images/cards/donaciones1.png');"></div>
+                    <div class="card-image" style="background-image: url('/assets/images/cards/donaciones2.png');"></div>
+                    <div class="card-image" style="background-image: url('/assets/images/cards/donaciones3.png');"></div>
+                    <div class="card-image fourth" style="background-image: url('/assets/images/cards/donaciones4.png');height: 20rem"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="carrousel-images">
+        <div class="carousel-content">
+            <div class="carousel-header">
+                <h2>Descubre todo lo que puedes intercambiar</h2>
+                <div class="carousel-controls">
+                    <button class="carousel-prev">&#10094;</button>
+                    <button class="carousel-next">&#10095;</button>
+                </div>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel">
+                        <div class="carousel-item">
+                            <img src="/assets/images/mosaic/antiguedades-img.png" alt="Antigüedades" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/assets/images/mosaic/tecnologia-img.png" alt="Tecnología" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/assets/images/mosaic/ropa-img.png" alt="Ropa" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/assets/images/mosaic/deporte-img.jpg" alt="Deporte" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/assets/images/mosaic/juguetes-img.jpg" alt="Juguetes" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/assets/images/mosaic/belleza-img.png" alt="Belleza" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/assets/images/mosaic/muebles-img.png" alt="Muebles" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/assets/images/mosaic/ocio-img.png" alt="Ocio" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/assets/images/mosaic/jardineria-img.png" alt="Jardineria" />
+                        </div>
+                    </div>
+                    <div class="swipe-indicator">
+                        <p>Desliza para ver más</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="principal-items">
+        <div class="main-content">
+            <div class="text-section">
+                <h1>Intercambios Sostenibles, <span class="highlight">Simplificados</span></h1>
+                <p>
+                    Con CambiaZo, puedes intercambiar, donar y conectar con usuarios para promover un estilo de vida sostenible, donde el valor de cada artículo sigue fluyendo.
+                </p>
+            </div>
+            <div class="icons-section">
+                <div class="icon-item">
+                    <img src="/assets/images/icons/escudo-icon.png" alt="Seguridad" class="icon"/>
+                    <h3>Seguridad</h3>
+                    <p>Intercambia y dona en un entorno seguro.</p>
+                </div>
+                <div class="icon-item">
+                    <img src="/assets/images/icons/exchange-icon.png" alt="Artículos" class="icon"/>
+                    <h3>Artículos</h3>
+                    <p>Gran variedad de artículos de distintas categorías.</p>
+                </div>
+                <div class="icon-item">
+                    <img src="/assets/images/icons/comunidad-icon.png" alt="Comunidad" class="icon"/>
+                    <h3>Comunidad</h3>
+                    <p>Conéctate con usuarios que comparten e impulsan.</p>
+                </div>
+                <div class="icon-item">
+                    <img src="/assets/images/icons/sostenible-icon.png" alt="Sostenible" class="icon"/>
+                    <h3>Sostenible</h3>
+                    <p>Reduce la huella de carbono con cada intercambio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="ONGs" class="ongs-section">
+        <div class="separating-line"></div>
+
+        <div class="container-ong">
+
+            <h2>Nuestras ONGs afiliadas</h2>
+            <p>
+                Contamos con una variedad muy amplia de organizaciones benéficas unidas por el desarrollo sostenible y la contribución con la mayoría de la sociedad peruana.
+            </p>
+
+            <div class="ong-slider">
+                <input type="radio" name="ong-testimonial" id="ong-1" />
+                <input type="radio" name="ong-testimonial" id="ong-2" />
+                <input type="radio" name="ong-testimonial" id="ong-3" checked />
+                <input type="radio" name="ong-testimonial" id="ong-4" />
+                <input type="radio" name="ong-testimonial" id="ong-5" />
+
+                <div class="ong-testimonials mb-8">
+                    <label class="ong-item" for="ong-1">
+                        <div class="ong-card">
+                            <img src="/assets/images/ongs/asppa.png" alt="ONG 1" class="ong-cardimg" />
+                        </div>
+                    </label>
+                    <label class="ong-item" for="ong-2">
+                        <div class="ong-card">
+                            <img src="/assets/images/ongs/care.png" alt="ONG 2" class="ong-cardimg" />
+                        </div>
+                    </label>
+                    <label class="ong-item" for="ong-3">
+                        <div class="ong-card">
+                            <img src="/assets/images/ongs/ensenaperu.png" alt="ONG 3" class="ong-cardimg" />
+                        </div>
+                    </label>
+                    <label class="ong-item" for="ong-4">
+                        <div class="ong-card">
+                            <img src="/assets/images/ongs/fundacion_calma.png" alt="ONG 4" class="ong-cardimg" />
+                        </div>
+                    </label>
+                    <label class="ong-item" for="ong-5">
+                        <div class="ong-card">
+                            <img src="/assets/images/ongs/d1.png" alt="ONG 5" class="ong-cardimg" />
+                        </div>
+                    </label>
+                </div>
+
+                <div class="ong-dots">
+                    <label for="ong-1"></label>
+                    <label for="ong-2"></label>
+                    <label for="ong-3"></label>
+                    <label for="ong-4"></label>
+                    <label for="ong-5"></label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="plans">
+        <div class="plans-container">
+            <h2>Mejora Tu Experiencia</h2>
+            <p>Explora nuestros planes Premium para acceso exclusivo, funciones avanzadas y soporte prioritario. ¡Únete y mejora tu experiencia hoy!</p>
+            <div class="plans">
+                <div class="plan plan-lite">
+                    <h3>Lite</h3>
+                    <p class="price">GRATIS</p>
+                    <p>Gratis para todos los usuarios</p>
+                    <ul>
+                        <li><img src="/assets/images/icons/checked-icon.png" alt="check-icon" class="check-icon"> Intercambios limitados.</li>
+                        <li><img src="/assets/images/icons/checked-icon.png" alt="check-icon" class="check-icon"> Anuncios moderados.</li>
+                    </ul>
+                    <button class="plan-button">¡Empieza ahora!</button>
+                </div>
+                <div class="plan plan-premium">
+                    <h3>Premium</h3>
+                    <p class="price">$3.99<span>c/mes</span></p>
+                    <p>Para usuarios expertos al cambiazo</p>
+                    <ul>
+                        <li><img src="/assets/images/icons/checked-icon.png" alt="check-icon" class="check-icon"> Intercambios ilimitados.</li>
+                        <li><img src="/assets/images/icons/checked-icon.png" alt="check-icon" class="check-icon"> Servicio de garantía.</li>
+                    </ul>
+                    <button class="plan-button">¡Empieza ahora!</button>
+                </div>
+                <div class="plan plan-plus">
+                    <h3>Plus</h3>
+                    <p class="price">$2.99<span>c/mes</span></p>
+                    <p>Para usuarios aficionados al cambiazo</p>
+                    <ul>
+                        <li><img src="/assets/images/icons/checked-icon.png" alt="check-icon" class="check-icon"> Intercambios semi-limitados.</li>
+                        <li><img src="/assets/images/icons/checked-icon.png" alt="check-icon" class="check-icon"> Libre de anuncios.</li>
+                    </ul>
+                    <button class="plan-button">¡Empieza ahora!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="contact-wrapper">
+        <section id="contact-us">
+            <div class="contact-container">
+                <div class="contact-content">
+                    <div class="contact-text">
+                        <h2 class="contact-title">¡Únete a CambiaZo!</h2>
+                        <p class="contact-description">Entérate de todas las novedades y contribuye a nuestra misión de sostenibilidad. Suscríbete para recibir nuestras últimas noticias.</p>
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="nombre">Nombre*</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellido">Apellido*</label>
+                                <input type="text" id="apellido" name="apellido" required>
+                            </div>
+                            <div class="form-group" class="email">
+                                <label for="email">Correo electrónico*</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <button type="submit" class="contact-button">Suscribirse</button>
+                        </form>
+                        <p class="contact-privacy">Todos los datos están protegidos por nuestra <a href="#">Política de privacidad</a>. Lea los Términos y condiciones <a href="#">aquí</a>.</p>
+                    </div>
+                    <div class="contact-image">
+                        <img src="/assets/images/contact-us/contact-image.jpg" alt="CambiaZo Suscripción">
+                    </div>
+                </div>
+            </div>
+            <div class="floating-elements">
+                <div class="floating-circle"></div>
+                <div class="floating-rectangle"></div>
+                <div class="floating-triangle"></div>
+            </div>
+        </section>
+    </div>
+
 </Layout>
 
 <style>
@@ -319,6 +635,16 @@ import Header from "../components/header-content/Header.astro";
     body {
         margin: 0;
         padding: 0;
+    }
+
+    .separating-line {
+        width: 45%;
+        height: 4px;
+        background-color: #ffd146;
+        margin: 50px auto;
+        margin-top: -2rem;
+        border-radius: 5px;
+        position: relative;
     }
 
     /*-----------------------------------------------------------------------------------------------------------*/
@@ -459,6 +785,1336 @@ import Header from "../components/header-content/Header.astro";
         .hero-button {
             font-size: 0.9rem;
             padding: 15px 30px;
+        }
+    }
+
+    /*-----------------------------------------------------------------------------------------------------------*/
+    /*-----------------------------------------------------------------------------------------------------------*/
+    /* Features section */
+
+    #features {
+        position: relative;
+        background-color: #18181b;
+        color: white;
+        padding: 30px;
+        margin-top: -7rem;
+        text-align: center;
+        border-top-left-radius: 60px;
+        border-top-right-radius: 60px;
+        z-index: 1;
+    }
+
+
+    #features h2,
+    #features .p-1 {
+        text-align: left;
+        padding-left: 13rem;
+        line-height: 0.65;
+    }
+
+    #features h1{
+        text-align: left;
+        font-size: 2.2rem;
+        color: #ffd146;
+
+    }
+    #features h2{
+        font-size: 2.2rem;
+    }
+
+    #features .p-1{
+        font-size: 1.2rem;
+    }
+
+    /*----------------------------------------------------------------------------------------------------*/
+    /*----------------------------------------------ABOUT US----------------------------------------------*/
+
+    #about-us {
+        background-color: transparent;
+        border-radius: 20px;
+        padding: 4rem 5rem;
+        max-width: 1200px;
+        margin: 5rem auto;
+        margin-top: 0.1rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .slider {
+        display: flex;
+        flex-wrap: nowrap;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+        min-width: 50%;
+        display: none;
+    }
+
+    .active-slide {
+        display: flex;
+    }
+
+    .about-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .about-info {
+        flex: 1;
+        padding-right: 2rem;
+    }
+
+    .about-info h2 {
+        font-size: 2.5rem;
+        color: #FFD146;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .about-info p {
+        font-size: 1.2rem;
+        color: #fff;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        text-align: justify;
+    }
+
+    .about-video {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .about-cards {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .about-card {
+        text-decoration: none;
+        background-color: #000;
+        color: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+        text-align: center;
+        width: 100%; /
+        max-width: 280px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .about-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .about-card h3 {
+        font-size: 1.5rem;
+        margin: 1rem 0 0.5rem;
+    }
+
+    .about-card p {
+        font-size: 1rem;
+        color: #e8e8e8;
+        margin: 0.5rem 1rem 1.4rem;
+    }
+
+    .about-card .role {
+        color: #ffd146;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .slider-controls {
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        right: 0px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+        transform: translateY(-50%);
+    }
+
+    .slider-prev,
+    .slider-next {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .slider-prev:hover,
+    .slider-next:hover {
+        background-color: #000;
+    }
+
+    @media (max-width: 768px) {
+        .about-content {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .about-info {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+
+
+        .about-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .about-card {
+            max-width: 100%;
+            margin: 1rem 0;
+        }
+
+        .slider-controls {
+            left: -15px;
+            right: -15px;
+        }
+    }
+
+    .feature-cards {
+        margin-left: 7.5rem;
+        margin-right: 7.5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .card {
+        position: relative;
+        border-radius: 25px;
+        color: black;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: white;
+    }
+
+    .blue-card {
+        background-color: #d0ebff;
+    }
+
+    .yellow-card {
+        background-color: #ffd146;
+    }
+
+    .content {
+        z-index: 2;
+        position: relative;
+        padding: 25px;
+    }
+
+    .title-icon {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .content h3 {
+        text-align: left;
+        font-size: 33px;
+        font-weight: 900;
+        margin: 0;
+    }
+
+    .content p {
+        text-align: left;
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+
+    .image-container {
+        position: relative;
+        width: 250%;
+        height: 16rem;
+        display: flex;
+    }
+
+    .card-image {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        border-radius: 30px;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    @media (max-width: 768px) {
+        .feature-cards {
+            grid-template-columns: 1fr;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+
+        #features h2,
+        #features .p-1 {
+            padding-left: 1rem;
+            text-align: left;
+            line-height: 1;
+
+        }
+
+        .content h3 {
+            font-size: 1.45rem;
+
+        }
+
+        .content p {
+            font-size: 0.96rem;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 200px;
+        }
+    }
+
+    /*------------------------------------------------EFECTOS CARDS-------------------------------------------*/
+    /*--------------------------------------------------------------------------------------------------------*/
+
+    .group .card-image:nth-child(1) {
+        transform: translateY(38px);
+    }
+
+    .group .card-image:nth-child(2) {
+        transform: translateY(7px) translateX(-190px);
+    }
+
+    .group .card-image:nth-child(3) {
+        transform: translateY(-20px) translateX(-320px); height: 20rem;
+    }
+
+    .group:hover .card-image:nth-child(1) {
+        transform: translateX(-20%) scale(0.95);
+        opacity: 0;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    .group:hover .card-image:nth-child(2) {
+        transform: translateX(-100%) translateY(7px);
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    .group:hover .card-image:nth-child(3) {
+        transform: translateX(-155%) translateY(-20px);
+        transition-delay: 0.05s;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    .group:hover .card-image:nth-child(4) {
+        transform: translateX(-198%) translateY(-40px);
+        transition-delay: 0.1s;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+
+    @media (min-width: 768px) {
+        .feature-cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .feature-cards {
+            grid-template-columns: 1fr;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+
+        .image-container {
+            position: relative;
+            width: 300%;
+            height: 15rem;
+            display: flex;
+        }
+
+        .card-image {
+            height: 100%;
+        }
+
+        .group .card-image:nth-child(1) {
+            transform: translateY(28px);
+        }
+
+        .group .card-image:nth-child(2) {
+            transform: translateY(14px) translateX(-80px);
+        }
+
+        .group .card-image:nth-child(3) {
+            transform: translateY(0px) translateX(-160px);
+        }
+
+        .group .card-image:nth-child(4) {
+            transform: translateY(-14px) translateX(-240px);
+        }
+
+        .group:hover .card-image:nth-child(1),
+        .group:hover .card-image:nth-child(2),
+        .group:hover .card-image:nth-child(3),
+        .group:hover .card-image:nth-child(4) {
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .group:hover .card-image:nth-child(1) {
+            transform: translateX(-20%) scale(0.95);
+            opacity: 0;
+        }
+
+        .group:hover .card-image:nth-child(2) {
+            transform: translateX(-100%) translateY(7px);
+        }
+
+        .group:hover .card-image:nth-child(3) {
+            transform: translateX(-155%) translateY(-20px);
+            transition-delay: 0.05s;
+        }
+
+        .group:hover .card-image:nth-child(4) {
+            transform: translateX(-198%) translateY(-40px);
+            transition-delay: 0.1s;
+        }
+    }
+    /*----------------------------------------------------------------------------------------------------*/
+    /*----------------------------------------------------------------------------------------------------*/
+
+
+    #carrousel-images {
+        padding: 2rem;
+        background-color: #f5f5f5;
+    }
+
+    .carousel-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .carousel-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .carousel-header h2 {
+        font-size: 2.5rem;
+        margin: 0;
+    }
+
+    .carousel-controls {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .carousel-controls button {
+        background-color: transparent;
+        border: 2px solid #000;
+        color: #000;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+        font-size: 1.2rem;
+    }
+
+    .carousel-controls button:hover {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .carousel-controls button:focus {
+        outline: none;
+    }
+
+    .carousel-container {
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .carousel-wrapper {
+        display: flex;
+        position: relative;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+    }
+
+    .carousel {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+        flex: 0 0 300px;
+        margin-right: 20px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+
+    .swipe-indicator {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
+
+
+    @media (min-width: 768px) {
+        .carousel-wrapper {
+            overflow-x: hidden;
+            overflow-y: hidden;
+            pointer-events: none;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .carousel-controls button {
+            display: none;
+        }
+
+        .swipe-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-wrapper {
+            overflow-y: hidden;
+        }
+
+    }
+
+    @media (max-width: 1200px) {
+        .carousel-item {
+            min-width: 280px;
+            height: 350px;
+        }
+
+        .carousel-controls button {
+            width: 40px;
+            height: 40px;
+            font-size: 1.4rem;
+        }
+
+        .carousel-header h2 {
+            font-size: 2rem;
+        }
+    }
+
+    /*----------------------------------------------------------------------------------------------------*/
+    /*----------------------------------------------------------------------------------------------------*/
+    /*------------------------------------------PRINCIPAL ITEMS-------------------------------------------*/
+    #principal-items {
+        background-color: #1a1a1a;
+        color: #fff;
+        padding: 50px 0;
+    }
+
+    .main-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .text-section {
+        max-width: 600px;
+    }
+
+    .text-section h1 {
+        font-size: 3.5rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .text-section .highlight {
+        color: #ffd146;
+    }
+
+    .text-section p {
+        font-size: 1.2rem;
+        max-width: 28rem;
+        line-height: 1.8;
+        text-align: justify;
+    }
+
+    .icons-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .icon-item {
+        text-align: left;
+    }
+
+    .icon-item h3 {
+        text-align: left;
+        font-size: 1.5rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .icon-item .icon {
+        object-fit: contain;
+    }
+
+    .icon-item p {
+        text-align: left;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    @media (max-width: 768px) {
+        .main-content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .icons-section {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .text-section h1 {
+            text-align:	left;
+            font-size: 2.5rem;
+        }
+    }
+
+    /*------------------------------------ONGs-------------------------------------------*/
+    /*-----------------------------------------------------------------------------------*/
+
+    #ONGs {
+        background-color: #1a1a1a;
+        padding: 60px 0;
+    }
+
+    #ONGs .container-ong {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px;
+    }
+
+    #ONGs h2,
+    #ONGs p {
+        color: white;
+        text-align: left;
+        margin: 0 0 20px 0; /
+    }
+
+    #ONGs h2 {
+        font-size: 3rem;
+    }
+
+    #ONGs p {
+        font-size: 1.2rem;
+        max-width: 800px;
+    }
+
+    .ong-slider {
+        width: 100%;
+        min-height: 385px;
+        margin-top: 30px;
+    }
+
+    .ong-card {
+        height: 100%;
+        width: 100%;
+        max-width: 24rem;
+        display: flex;
+        overflow: hidden;
+        padding: 0;
+        border-radius: 1.5rem;
+        background-color: white;
+    }
+
+    .ong-cardimg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .ong-slider input {
+        display: none;
+    }
+
+    .ong-testimonials {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        min-height: 375px;
+        perspective: 500px;
+        margin-top: 5rem;
+        overflow: hidden;
+    }
+
+    .ong-testimonials .ong-item {
+        max-width: 20rem;
+        border-radius: 1.5rem;
+        border-width: 2px;
+        top: 0;
+        position: absolute;
+        box-sizing: border-box;
+        padding: 30px;
+        width: 450px;
+        text-align: center;
+        transition: transform 0.4s;
+        transform-style: preserve-3d;
+        user-select: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ong-testimonials .ong-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1.5rem;
+    }
+
+
+    .ong-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ong-dots label {
+        display: block;
+        height: 5px;
+        width: 5px;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: #413b52;
+        margin: 7px;
+        transition: transform 0.2s, color 0.2s;
+    }
+
+
+    /* Animaciones y posicionamiento para cada slide */
+    /* Primer slide */
+    #ong-1:checked ~ .ong-dots label[for="ong-1"] {
+        transform: scale(2);
+        background-color: #fff;
+    }
+    #ong-1:checked ~ .ong-dots label[for="ong-2"] {
+        transform: scale(1.5);
+    }
+    #ong-1:checked ~ .ong-testimonials label[for="ong-1"] {
+        z-index: 4;
+    }
+    #ong-1:checked ~ .ong-testimonials label[for="ong-2"] {
+        transform: translateX(300px) translateZ(-90px) translateY(-15px);
+        z-index: 3;
+    }
+    #ong-1:checked ~ .ong-testimonials label[for="ong-3"] {
+        transform: translateX(600px) translateZ(-180px) translateY(-30px);
+        z-index: 2;
+    }
+    #ong-1:checked ~ .ong-testimonials label[for="ong-4"] {
+        transform: translateX(900px) translateZ(-270px) translateY(-45px);
+        z-index: 1;
+    }
+    #ong-1:checked ~ .ong-testimonials label[for="ong-5"] {
+        transform: translateX(1200px) translateZ(-360px) translateY(-60px);
+    }
+
+    /* Segundo slide */
+    #ong-2:checked ~ .ong-dots label[for="ong-1"] {
+        transform: scale(1.5);
+    }
+    #ong-2:checked ~ .ong-dots label[for="ong-2"] {
+        transform: scale(2);
+        background-color: #fff;
+    }
+    #ong-2:checked ~ .ong-dots label[for="ong-3"] {
+        transform: scale(1.5);
+    }
+    #ong-2:checked ~ .ong-testimonials label[for="ong-1"] {
+        transform: translateX(-300px) translateZ(-90px) translateY(-15px);
+    }
+    #ong-2:checked ~ .ong-testimonials label[for="ong-2"] {
+        z-index: 3;
+    }
+    #ong-2:checked ~ .ong-testimonials label[for="ong-3"] {
+        transform: translateX(300px) translateZ(-90px) translateY(-15px);
+        z-index: 2;
+    }
+    #ong-2:checked ~ .ong-testimonials label[for="ong-4"] {
+        transform: translateX(600px) translateZ(-180px) translateY(-30px);
+        z-index: 1;
+    }
+    #ong-2:checked ~ .ong-testimonials label[for="ong-5"] {
+        transform: translateX(900px) translateZ(-270px) translateY(-45px);
+    }
+
+    /* Tercer slide */
+    #ong-3:checked ~ .ong-dots label[for="ong-2"] {
+        transform: scale(1.5);
+    }
+    #ong-3:checked ~ .ong-dots label[for="ong-3"] {
+        transform: scale(2);
+        background-color: #fff;
+    }
+    #ong-3:checked ~ .ong-dots label[for="ong-4"] {
+        transform: scale(1.5);
+    }
+    #ong-3:checked ~ .ong-testimonials label[for="ong-1"] {
+        transform: translateX(-600px) translateZ(-180px) translateY(-30px);
+    }
+    #ong-3:checked ~ .ong-testimonials label[for="ong-2"] {
+        transform: translateX(-300px) translateZ(-90px) translateY(-15px);
+    }
+    #ong-3:checked ~ .ong-testimonials label[for="ong-3"] {
+        z-index: 3;
+    }
+    #ong-3:checked ~ .ong-testimonials label[for="ong-4"] {
+        transform: translateX(300px) translateZ(-90px) translateY(-15px);
+        z-index: 2;
+    }
+    #ong-3:checked ~ .ong-testimonials label[for="ong-5"] {
+        transform: translateX(600px) translateZ(-180px) translateY(-30px);
+    }
+
+    /* Cuarto slide */
+    #ong-4:checked ~ .ong-dots label[for="ong-3"] {
+        transform: scale(1.5);
+    }
+    #ong-4:checked ~ .ong-dots label[for="ong-4"] {
+        transform: scale(2);
+        background-color: #fff;
+    }
+    #ong-4:checked ~ .ong-dots label[for="ong-5"] {
+        transform: scale(1.5);
+    }
+    #ong-4:checked ~ .ong-testimonials label[for="ong-1"] {
+        transform: translateX(-900px) translateZ(-270px) translateY(-45px);
+    }
+    #ong-4:checked ~ .ong-testimonials label[for="ong-2"] {
+        transform: translateX(-600px) translateZ(-180px) translateY(-30px);
+    }
+    #ong-4:checked ~ .ong-testimonials label[for="ong-3"] {
+        transform: translateX(-300px) translateZ(-90px) translateY(-15px);
+        z-index: 2;
+    }
+    #ong-4:checked ~ .ong-testimonials label[for="ong-4"] {
+        z-index: 3;
+    }
+    #ong-4:checked ~ .ong-testimonials label[for="ong-5"] {
+        transform: translateX(300px) translateZ(-90px) translateY(-15px);
+    }
+
+    /* Quinto slide */
+    #ong-5:checked ~ .ong-dots label[for="ong-4"] {
+        transform: scale(1.5);
+    }
+    #ong-5:checked ~ .ong-dots label[for="ong-5"] {
+        transform: scale(2);
+        background-color: #fff;
+    }
+    #ong-5:checked ~ .ong-testimonials label[for="ong-1"] {
+        transform: translateX(-1200px) translateZ(-360px) translateY(-60px);
+    }
+    #ong-5:checked ~ .ong-testimonials label[for="ong-2"] {
+        transform: translateX(-900px) translateZ(-270px) translateY(-45px);
+        z-index: 1;
+    }
+    #ong-5:checked ~ .ong-testimonials label[for="ong-3"] {
+        transform: translateX(-600px) translateZ(-180px) translateY(-30px);
+        z-index: 2;
+    }
+    #ong-5:checked ~ .ong-testimonials label[for="ong-4"] {
+        transform: translateX(-300px) translateZ(-90px) translateY(-15px);
+        z-index: 3;
+    }
+    #ong-5:checked ~ .ong-testimonials label[for="ong-5"] {
+        z-index: 4;
+    }
+    /*----------------------------------------------------------------------------------------------------*/
+    /*---------------------------------------------PLANES-------------------------------------------------*/
+
+
+    #plans {
+        background-color: #fff;
+        padding: 4rem 1rem;
+        text-align: left;
+    }
+
+    .plans-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .plans-container h2 {
+        text-align: left;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .plans-container p {
+        text-align: left;
+        font-size: 1.2rem;
+        color: #333;
+        max-width: 800px;
+        margin: 0 0 2rem 0;
+        line-height: 1.5;
+    }
+
+    .check-icon {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+
+    .plans {
+        display: flex;
+        justify-content: flex-start;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .plan {
+        background-color: #fff;
+        border-radius: 20px;
+        padding: 2rem;
+        width: 300px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        text-align: left;
+    }
+
+    .plan:hover {
+        transform: translateY(-10px);
+    }
+
+    .plan h3 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .plan .price {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .plan .price span {
+        font-size: 1.2rem;
+        vertical-align: super;
+    }
+
+    .plan p {
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    .plan ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.5rem 0;
+    }
+
+    .plan ul li {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .plan ul li span {
+        margin-right: 0.5rem;
+    }
+
+    .plan-lite {
+        background-color: #fff;
+        border: 2px solid #ffd146;
+        color: #333;
+    }
+
+    .plan-premium {
+        background-color: #ffd146;
+        color: #333;
+    }
+
+    .plan-plus {
+        background-color: #fff;
+        border: 2px solid #ffd146;
+        color: #333;
+    }
+
+    .plan-button {
+        background-color: #000;
+        color: #fff;
+        padding: 0.8rem 4.7rem;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .plan-button:hover {
+        background-color: #333;
+    }
+
+    /*----------------------------------------------------------------------------------------------------*/
+    /*---------------------------------------CONTACT US	----------------------------------------------*/
+
+    #contact-us {
+        position: relative;
+        background-color: #ffd146;
+        padding: 50px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        border-bottom-left-radius: 60px;
+        border-bottom-right-radius: 60px;
+        overflow: hidden;
+    }
+
+    .contact-wrapper {
+        background-color: #18181b;
+    }
+
+    .contact-container {
+        max-width: 1200px;
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 30px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .contact-container:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+
+    .contact-container:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .contact-text {
+        max-width: 500px;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .contact-title {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #333;
+        letter-spacing: 1px;
+        position: relative;
+    }
+
+    .contact-title::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 50px;
+        height: 4px;
+        background-color: #333;
+    }
+
+    .contact-description {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        color: #666;
+        line-height: 1.6;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .contact-description:hover {
+        color: #333;
+    }
+
+    .contact-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideUp 0.5s ease-in-out 0.3s forwards;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .form-group:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group label {
+        font-size: 1rem;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    .form-group input {
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease-in-out;
+    }
+
+    .form-group input:focus {
+        border-color: #333;
+        outline: none;
+    }
+
+    .contact-button {
+        grid-column: span 2;
+        padding: 15px;
+        background-color: #ffd146;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+        margin-top: 20px;
+        transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    .contact-button:hover {
+        background-color: #ecd000;
+        transform: translateY(-5px);
+    }
+
+    .contact-privacy {
+        font-size: 0.9rem;
+        color: #666;
+        margin-top: 20px;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .contact-privacy a {
+        color: #333;
+        text-decoration: none;
+        border-bottom: 1px solid #333;
+        transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    }
+
+    .contact-privacy a:hover {
+        color: #666;
+        border-color: #666;
+    }
+
+    .contact-image {
+        max-width: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: slideInRight 0.5s ease-in-out;
+    }
+
+    .contact-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .contact-image img:hover {
+        transform: scale(1.05);
+    }
+
+
+    @media (max-width: 768px) {
+        .contact-container {
+            padding: 50px;
+            margin: 30px;
+        }
+
+        .contact-content {
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.5s ease-in-out 0.3s forwards;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contact-title {
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .contact-description {
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .contact-form {
+            grid-template-columns: 1fr;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+        }
+
+        .form-group input {
+            padding: 8px;
+            font-size: 0.9rem;
+        }
+
+        .contact-button {
+            padding: 10px;
+            font-size: 1rem;
+            grid-column: span 1;
+        }
+
+        .contact-privacy {
+            font-size: 0.75rem;
+            text-align: center;
+        }
+
+        .contact-image {
+            display: none;
+        }
+    }
+
+
+    @keyframes slideUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
         }
     }
 
