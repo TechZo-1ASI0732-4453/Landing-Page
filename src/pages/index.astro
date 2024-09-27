@@ -1117,9 +1117,350 @@ import Header from "../components/header-content/Header.astro";
         }
     }
 
-    /*-----------------------------------------------------------------------------------------------------------*/
-    /*-----------------------------------------------------------------------------------------------------------*/
-    /*  */
+    /*----------------------------------------------------------------------------------------------------*/
+    /*----------------------------------------------------------------------------------------------------*/
+    /*------------------------------------------PRINCIPAL ITEMS-------------------------------------------*/
+    #principal-items {
+        background-color: #1a1a1a;
+        color: #fff;
+        padding: 50px 0;
+    }
+
+    .main-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .text-section {
+        max-width: 600px;
+    }
+
+    .text-section h1 {
+        font-size: 3.5rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .text-section .highlight {
+        color: #ffd146;
+    }
+
+    .text-section p {
+        font-size: 1.2rem;
+        max-width: 28rem;
+        line-height: 1.8;
+        text-align: justify;
+    }
+
+    .icons-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .icon-item {
+        text-align: left;
+    }
+
+    .icon-item h3 {
+        text-align: left;
+        font-size: 1.5rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .icon-item .icon {
+        object-fit: contain;
+    }
+
+    .icon-item p {
+        text-align: left;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    @media (max-width: 768px) {
+        .main-content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .icons-section {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .text-section h1 {
+            text-align:	left;
+            font-size: 2.5rem;
+        }
+    }
+
+    /*------------------------------------ONGs-------------------------------------------*/
+    /*-----------------------------------------------------------------------------------*/
+
+    #ONGs {
+        background-color: #1a1a1a;
+        padding: 60px 0;
+    }
+
+    #ONGs .container-ong {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px;
+    }
+
+    #ONGs h2,
+    #ONGs p {
+        color: white;
+        text-align: left;
+        margin: 0 0 20px 0; /
+    }
+
+    #ONGs h2 {
+        font-size: 3rem;
+    }
+
+    #ONGs p {
+        font-size: 1.2rem;
+        max-width: 800px;
+    }
+
+    .ong-slider {
+        width: 100%;
+        min-height: 385px;
+        margin-top: 30px;
+    }
+
+    .ong-card {
+        height: 100%;
+        width: 100%;
+        max-width: 24rem;
+        display: flex;
+        overflow: hidden;
+        padding: 0;
+        border-radius: 1.5rem;
+        background-color: white;
+    }
+
+    .ong-cardimg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .ong-slider input {
+        display: none;
+    }
+
+    .ong-testimonials {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        min-height: 375px;
+        perspective: 500px;
+        margin-top: 5rem;
+        overflow: hidden;
+    }
+
+    .ong-testimonials .ong-item {
+        max-width: 20rem;
+        border-radius: 1.5rem;
+        border-width: 2px;
+        top: 0;
+        position: absolute;
+        box-sizing: border-box;
+        padding: 30px;
+        width: 450px;
+        text-align: center;
+        transition: transform 0.4s;
+        transform-style: preserve-3d;
+        user-select: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ong-testimonials .ong-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1.5rem;
+    }
+
+
+    .ong-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ong-dots label {
+        display: block;
+        height: 5px;
+        width: 5px;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: #413b52;
+        margin: 7px;
+        transition: transform 0.2s, color 0.2s;
+    }
+
+
+    /* Animaciones y posicionamiento para cada slide */
+    /* Primer slide */
+    #ong-1:checked ~ .ong-dots label[for="ong-1"] {
+        transform: scale(2);
+        background-color: #fff;
+    }
+    #ong-1:checked ~ .ong-dots label[for="ong-2"] {
+        transform: scale(1.5);
+    }
+    #ong-1:checked ~ .ong-testimonials label[for="ong-1"] {
+        z-index: 4;
+    }
+    #ong-1:checked ~ .ong-testimonials label[for="ong-2"] {
+        transform: translateX(300px) translateZ(-90px) translateY(-15px);
+        z-index: 3;
+    }
+    #ong-1:checked ~ .ong-testimonials label[for="ong-3"] {
+        transform: translateX(600px) translateZ(-180px) translateY(-30px);
+        z-index: 2;
+    }
+    #ong-1:checked ~ .ong-testimonials label[for="ong-4"] {
+        transform: translateX(900px) translateZ(-270px) translateY(-45px);
+        z-index: 1;
+    }
+    #ong-1:checked ~ .ong-testimonials label[for="ong-5"] {
+        transform: translateX(1200px) translateZ(-360px) translateY(-60px);
+    }
+
+    /* Segundo slide */
+    #ong-2:checked ~ .ong-dots label[for="ong-1"] {
+        transform: scale(1.5);
+    }
+    #ong-2:checked ~ .ong-dots label[for="ong-2"] {
+        transform: scale(2);
+        background-color: #fff;
+    }
+    #ong-2:checked ~ .ong-dots label[for="ong-3"] {
+        transform: scale(1.5);
+    }
+    #ong-2:checked ~ .ong-testimonials label[for="ong-1"] {
+        transform: translateX(-300px) translateZ(-90px) translateY(-15px);
+    }
+    #ong-2:checked ~ .ong-testimonials label[for="ong-2"] {
+        z-index: 3;
+    }
+    #ong-2:checked ~ .ong-testimonials label[for="ong-3"] {
+        transform: translateX(300px) translateZ(-90px) translateY(-15px);
+        z-index: 2;
+    }
+    #ong-2:checked ~ .ong-testimonials label[for="ong-4"] {
+        transform: translateX(600px) translateZ(-180px) translateY(-30px);
+        z-index: 1;
+    }
+    #ong-2:checked ~ .ong-testimonials label[for="ong-5"] {
+        transform: translateX(900px) translateZ(-270px) translateY(-45px);
+    }
+
+    /* Tercer slide */
+    #ong-3:checked ~ .ong-dots label[for="ong-2"] {
+        transform: scale(1.5);
+    }
+    #ong-3:checked ~ .ong-dots label[for="ong-3"] {
+        transform: scale(2);
+        background-color: #fff;
+    }
+    #ong-3:checked ~ .ong-dots label[for="ong-4"] {
+        transform: scale(1.5);
+    }
+    #ong-3:checked ~ .ong-testimonials label[for="ong-1"] {
+        transform: translateX(-600px) translateZ(-180px) translateY(-30px);
+    }
+    #ong-3:checked ~ .ong-testimonials label[for="ong-2"] {
+        transform: translateX(-300px) translateZ(-90px) translateY(-15px);
+    }
+    #ong-3:checked ~ .ong-testimonials label[for="ong-3"] {
+        z-index: 3;
+    }
+    #ong-3:checked ~ .ong-testimonials label[for="ong-4"] {
+        transform: translateX(300px) translateZ(-90px) translateY(-15px);
+        z-index: 2;
+    }
+    #ong-3:checked ~ .ong-testimonials label[for="ong-5"] {
+        transform: translateX(600px) translateZ(-180px) translateY(-30px);
+    }
+
+    /* Cuarto slide */
+    #ong-4:checked ~ .ong-dots label[for="ong-3"] {
+        transform: scale(1.5);
+    }
+    #ong-4:checked ~ .ong-dots label[for="ong-4"] {
+        transform: scale(2);
+        background-color: #fff;
+    }
+    #ong-4:checked ~ .ong-dots label[for="ong-5"] {
+        transform: scale(1.5);
+    }
+    #ong-4:checked ~ .ong-testimonials label[for="ong-1"] {
+        transform: translateX(-900px) translateZ(-270px) translateY(-45px);
+    }
+    #ong-4:checked ~ .ong-testimonials label[for="ong-2"] {
+        transform: translateX(-600px) translateZ(-180px) translateY(-30px);
+    }
+    #ong-4:checked ~ .ong-testimonials label[for="ong-3"] {
+        transform: translateX(-300px) translateZ(-90px) translateY(-15px);
+        z-index: 2;
+    }
+    #ong-4:checked ~ .ong-testimonials label[for="ong-4"] {
+        z-index: 3;
+    }
+    #ong-4:checked ~ .ong-testimonials label[for="ong-5"] {
+        transform: translateX(300px) translateZ(-90px) translateY(-15px);
+    }
+
+    /* Quinto slide */
+    #ong-5:checked ~ .ong-dots label[for="ong-4"] {
+        transform: scale(1.5);
+    }
+    #ong-5:checked ~ .ong-dots label[for="ong-5"] {
+        transform: scale(2);
+        background-color: #fff;
+    }
+    #ong-5:checked ~ .ong-testimonials label[for="ong-1"] {
+        transform: translateX(-1200px) translateZ(-360px) translateY(-60px);
+    }
+    #ong-5:checked ~ .ong-testimonials label[for="ong-2"] {
+        transform: translateX(-900px) translateZ(-270px) translateY(-45px);
+        z-index: 1;
+    }
+    #ong-5:checked ~ .ong-testimonials label[for="ong-3"] {
+        transform: translateX(-600px) translateZ(-180px) translateY(-30px);
+        z-index: 2;
+    }
+    #ong-5:checked ~ .ong-testimonials label[for="ong-4"] {
+        transform: translateX(-300px) translateZ(-90px) translateY(-15px);
+        z-index: 3;
+    }
+    #ong-5:checked ~ .ong-testimonials label[for="ong-5"] {
+        z-index: 4;
+    }
 
 
 </style>
