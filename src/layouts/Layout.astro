@@ -3,18 +3,17 @@ interface Props {
 	title: string;
 }
 
-const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Cambia, dona y disfruta." />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/assets/images/icons/cambiazo-icon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>CambiaZo</title>
 	</head>
 	<body>
 		<slot />
@@ -32,8 +31,8 @@ const { title } = Astro.props;
 			white 60%
 		);
 	}
-	html {
-		font-family: system-ui, sans-serif;
+	html, body {
+		font-family: 'Consolas', monospace;
 		background: #13151a;
 	}
 	code {
