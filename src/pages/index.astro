@@ -1500,6 +1500,134 @@ import Header from "../components/header-content/Header.astro";
     #ong-5:checked ~ .ong-testimonials label[for="ong-5"] {
         z-index: 4;
     }
+    /*----------------------------------------------------------------------------------------------------*/
+    /*---------------------------------------------PLANES-------------------------------------------------*/
 
+
+    #plans {
+        background-color: #fff;
+        padding: 4rem 1rem;
+        text-align: left;
+    }
+
+    .plans-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .plans-container h2 {
+        text-align: left;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .plans-container p {
+        text-align: left;
+        font-size: 1.2rem;
+        color: #333;
+        max-width: 800px;
+        margin: 0 0 2rem 0;
+        line-height: 1.5;
+    }
+
+    .check-icon {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+
+    .plans {
+        display: flex;
+        justify-content: flex-start;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .plan {
+        background-color: #fff;
+        border-radius: 20px;
+        padding: 2rem;
+        width: 300px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        text-align: left;
+    }
+
+    .plan:hover {
+        transform: translateY(-10px);
+    }
+
+    .plan h3 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .plan .price {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .plan .price span {
+        font-size: 1.2rem;
+        vertical-align: super;
+    }
+
+    .plan p {
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    .plan ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.5rem 0;
+    }
+
+    .plan ul li {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .plan ul li span {
+        margin-right: 0.5rem;
+    }
+
+    .plan-lite {
+        background-color: #fff;
+        border: 2px solid #ffd146;
+        color: #333;
+    }
+
+    .plan-premium {
+        background-color: #ffd146;
+        color: #333;
+    }
+
+    .plan-plus {
+        background-color: #fff;
+        border: 2px solid #ffd146;
+        color: #333;
+    }
+
+    .plan-button {
+        background-color: #000;
+        color: #fff;
+        padding: 0.8rem 4.7rem;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .plan-button:hover {
+        background-color: #333;
+    }
 
 </style>
