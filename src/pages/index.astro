@@ -10,7 +10,6 @@ import Header from "../components/header-content/Header.astro";
         let startX: number;
         let scrollLeft: number;
 
-        // Evento para empezar a arrastrar
         ongSlider.addEventListener('mousedown', (e: MouseEvent) => {
             isDragging = true;
             startX = e.pageX - ongSlider.offsetLeft;
@@ -18,7 +17,6 @@ import Header from "../components/header-content/Header.astro";
             ongSlider.classList.add('active');
         });
 
-        // Evento para detener el arrastre
         ongSlider.addEventListener('mouseleave', () => {
             isDragging = false;
             ongSlider.classList.remove('active');
@@ -277,7 +275,6 @@ import Header from "../components/header-content/Header.astro";
             isDragging = false;
         });
 
-        // Evitar el comportamiento por defecto para prevenir el desplazamiento de la página
         const preventDefault = (e: MouseEvent | TouchEvent) => {
             if (isDragging) e.preventDefault();
         };
@@ -285,7 +282,6 @@ import Header from "../components/header-content/Header.astro";
         ongSlider.addEventListener('mousemove', preventDefault);
         ongSlider.addEventListener('touchmove', preventDefault);
 
-        // Actualizar el índice actual cuando se cambia el slide manualmente (por ejemplo, al hacer clic en los puntos)
         radios.forEach((radio: HTMLInputElement, index) => {
             radio.addEventListener('change', () => {
                 if (radio.checked) {
@@ -297,7 +293,25 @@ import Header from "../components/header-content/Header.astro";
 </script>
 
 <Layout title="CambiaZo">
-
+    <Header />
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Más que un Intercambio</h1>
+            <p class="hero-description">
+                CambiaZo te permite dar nueva vida a tus objetos mientras intercambias y donas para un mundo más sostenible. ¡Únete!
+            </p>
+            <div class="play-store-button-container">
+                <a href="https://play.google.com/store" target="_blank">
+                    <button class="hero-button">
+                        <img src="/assets/images/icons/playstore.png" alt="Play Store" class="play-store-icon"/>Intercambia ahora
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="/assets/images/hero/hero-img.png" alt="CambiaZo App Image">
+        </div>
+    </section>
 </Layout>
 
 <style>
