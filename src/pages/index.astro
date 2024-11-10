@@ -98,56 +98,53 @@ import Footer from "../components/footer-content/Footer.astro";
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const initializeSlider = (selector, controls = false) => {
-            const slider = document.querySelector(selector) as HTMLElement;
-            if (!slider) return;
+        const initializeSlider = (selector: string, controls: boolean = false) => {
+    const slider = document.querySelector(selector) as HTMLElement;
+    if (!slider) return;
 
-            let isDragging = false, startX = 0, scrollLeft = 0;
+    let isDragging = false, startX = 0, scrollLeft = 0;
 
-            const startDrag = (e: MouseEvent | TouchEvent) => {
-                isDragging = true;
-                startX = (e instanceof TouchEvent ? e.touches[0].pageX : e.pageX) - slider.offsetLeft;
-                scrollLeft = slider.scrollLeft;
-                slider.classList.add('active');
-            };
+    const startDrag = (e: MouseEvent | TouchEvent) => {
+        isDragging = true;
+        startX = (e instanceof TouchEvent ? e.touches[0].pageX : e.pageX) - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+        slider.classList.add('active');
+    };
 
-            const stopDrag = () => {
-                isDragging = false;
-                slider.classList.remove('active');
-            };
+    const stopDrag = () => {
+        isDragging = false;
+        slider.classList.remove('active');
+    };
 
-            const dragMove = (e: MouseEvent | TouchEvent) => {
-                if (!isDragging) return;
-                e.preventDefault();
-                const x = (e instanceof TouchEvent ? e.touches[0].pageX : e.pageX) - slider.offsetLeft;
-                slider.scrollLeft = scrollLeft - (x - startX) * 1.5;
-            };
+    const dragMove = (e: MouseEvent | TouchEvent) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = (e instanceof TouchEvent ? e.touches[0].pageX : e.pageX) - slider.offsetLeft;
+        slider.scrollLeft = scrollLeft - (x - startX) * 1.5;
+    };
 
-            slider.addEventListener('mousedown', startDrag);
-            slider.addEventListener('touchstart', startDrag);
-            slider.addEventListener('mouseleave', stopDrag);
-            slider.addEventListener('mouseup', stopDrag);
-            slider.addEventListener('touchend', stopDrag);
-            slider.addEventListener('mousemove', dragMove);
-            slider.addEventListener('touchmove', dragMove);
+    slider.addEventListener('mousedown', startDrag);
+    slider.addEventListener('touchstart', startDrag);
+    slider.addEventListener('mouseleave', stopDrag);
+    slider.addEventListener('mouseup', stopDrag);
+    slider.addEventListener('touchend', stopDrag);
+    slider.addEventListener('mousemove', dragMove);
+    slider.addEventListener('touchmove', dragMove);
 
-            if (controls) {
-                const prevButton = document.querySelector(`${selector}-prev`);
-                const nextButton = document.querySelector(`${selector}-next`);
-                const itemWidth = slider.firstElementChild?.clientWidth || 300;
+    if (controls) {
+        const prevButton = document.querySelector(`${selector}-prev`);
+        const nextButton = document.querySelector(`${selector}-next`);
+        const itemWidth = slider.firstElementChild?.clientWidth || 300;
 
-                nextButton?.addEventListener('click', () => {
-                    slider.scrollBy({ left: itemWidth, behavior: 'smooth' });
-                });
+        nextButton?.addEventListener('click', () => {
+            slider.scrollBy({ left: itemWidth, behavior: 'smooth' });
+        });
 
-                prevButton?.addEventListener('click', () => {
-                    slider.scrollBy({ left: -itemWidth, behavior: 'smooth' });
-                });
-            }
-        };
-
-        initializeSlider('.ong-testimonials');
-        initializeSlider('.carousel-wrapper', true);
+        prevButton?.addEventListener('click', () => {
+            slider.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+        });
+    }
+};
     });
 </script>
 
