@@ -98,53 +98,56 @@ import Footer from "../components/footer-content/Footer.astro";
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const carouselWrapper = document.querySelector('.carousel-wrapper') as HTMLElement;
-        const swipeIndicator = document.querySelector('.swipe-indicator') as HTMLElement;
-        if (!carouselWrapper) {
-            console.error('carousel-wrapper no encontrado.');
-            return;
-        }
-        let isDown = false;
-        let startX: number;
-        let scrollLeft: number;
+        const initializeSlider = (selector, controls = false) => {
+            const slider = document.querySelector(selector) as HTMLElement;
+            if (!slider) return;
 
-        const startDragging = (e: MouseEvent | TouchEvent) => {
-            isDown = true;
-            carouselWrapper.classList.add('active');
-            startX = (e instanceof TouchEvent ? e.touches[0].pageX : e.pageX) - carouselWrapper.offsetLeft;
-            scrollLeft = carouselWrapper.scrollLeft;
+            let isDragging = false, startX = 0, scrollLeft = 0;
 
-            if (swipeIndicator) {
-                swipeIndicator.style.display = 'none';
+            const startDrag = (e: MouseEvent | TouchEvent) => {
+                isDragging = true;
+                startX = (e instanceof TouchEvent ? e.touches[0].pageX : e.pageX) - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+                slider.classList.add('active');
+            };
+
+            const stopDrag = () => {
+                isDragging = false;
+                slider.classList.remove('active');
+            };
+
+            const dragMove = (e: MouseEvent | TouchEvent) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const x = (e instanceof TouchEvent ? e.touches[0].pageX : e.pageX) - slider.offsetLeft;
+                slider.scrollLeft = scrollLeft - (x - startX) * 1.5;
+            };
+
+            slider.addEventListener('mousedown', startDrag);
+            slider.addEventListener('touchstart', startDrag);
+            slider.addEventListener('mouseleave', stopDrag);
+            slider.addEventListener('mouseup', stopDrag);
+            slider.addEventListener('touchend', stopDrag);
+            slider.addEventListener('mousemove', dragMove);
+            slider.addEventListener('touchmove', dragMove);
+
+            if (controls) {
+                const prevButton = document.querySelector(`${selector}-prev`);
+                const nextButton = document.querySelector(`${selector}-next`);
+                const itemWidth = slider.firstElementChild?.clientWidth || 300;
+
+                nextButton?.addEventListener('click', () => {
+                    slider.scrollBy({ left: itemWidth, behavior: 'smooth' });
+                });
+
+                prevButton?.addEventListener('click', () => {
+                    slider.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+                });
             }
         };
 
-        const stopDragging = () => {
-            isDown = false;
-            carouselWrapper.classList.remove('active');
-        };
-
-        const moveDragging = (e: MouseEvent | TouchEvent) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = (e instanceof TouchEvent ? e.touches[0].pageX : e.pageX) - carouselWrapper.offsetLeft;
-            const walk = (x - startX) * 2;
-            carouselWrapper.scrollLeft = scrollLeft - walk;
-        };
-
-        const isMobile = window.innerWidth <= 767;
-
-        if (isMobile) {
-            carouselWrapper.addEventListener('mousedown', startDragging);
-            carouselWrapper.addEventListener('touchstart', startDragging);
-
-            carouselWrapper.addEventListener('mouseleave', stopDragging);
-            carouselWrapper.addEventListener('mouseup', stopDragging);
-            carouselWrapper.addEventListener('touchend', stopDragging);
-
-            carouselWrapper.addEventListener('mousemove', moveDragging);
-            carouselWrapper.addEventListener('touchmove', moveDragging);
-        }
+        initializeSlider('.ong-testimonials');
+        initializeSlider('.carousel-wrapper', true);
     });
 </script>
 
@@ -295,24 +298,23 @@ import Footer from "../components/footer-content/Footer.astro";
 
 <Layout title="CambiaZo">
     <Header />
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Más que un Intercambio</h1>
-            <p class="hero-description">
-                CambiaZo te permite dar nueva vida a tus objetos mientras intercambias y donas para un mundo más sostenible. ¡Únete!
-            </p>
-            <div class="play-store-button-container">
-                <a href="https://play.google.com/store" target="_blank">
-                    <button class="hero-button">
-                        <img src="/assets/images/icons/playstore.png" alt="Play Store" class="play-store-icon"/>Intercambia ahora
-                    </button>
-                </a>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Más que un Intercambio</h1>
+                <p class="hero-description">CambiaZo te permite dar nueva vida a tus objetos mientras intercambias y donas para un mundo más sostenible. ¡Únete!</p>
+                <div class="play-store-button-container">
+                    <a href="https://play.google.com/store" target="_blank">
+                        <button class="hero-button">
+                            <img src="/assets/images/icons/playstore.png" alt="Play Store" class="play-store-icon"/>Intercambia ahora
+                        </button>
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="hero-image">
-            <img src="/assets/images/hero/hero-img.png" alt="CambiaZo App Image">
-        </div>
-    </section>
+            <div class="hero-image">
+                <img src="/assets/images/hero/hero-img.png" alt="CambiaZo App Image">
+            </div>
+        </section>
 
 
 
@@ -332,7 +334,10 @@ import Footer from "../components/footer-content/Footer.astro";
                             </p>
                         </div>
                         <div class="about-video">
-                            <img src="/assets/images/about-us/cartel-vertical.png" alt="Cartel Vertical" width="80%" height="100%">
+                            <video controls width="80%" height="100%">
+                                <source src="/assets/images/about-us/video%20about%20the%20team.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento de video.
+                            </video>
                         </div>
                     </div>
                 </div>
@@ -628,6 +633,7 @@ import Footer from "../components/footer-content/Footer.astro";
             </div>
         </section>
     </div>
+    </main>
 
 
     <Footer></Footer>
@@ -841,7 +847,7 @@ import Footer from "../components/footer-content/Footer.astro";
         background-color: transparent;
         border-radius: 20px;
         padding: 4rem 5rem;
-        max-width: 1200px;
+        max-width: 1100px;
         margin: 5rem auto;
         margin-top: 0.1rem;
         position: relative;
@@ -872,7 +878,6 @@ import Footer from "../components/footer-content/Footer.astro";
 
     .about-info {
         flex: 1;
-        padding-right: 2rem;
     }
 
     .about-info h2 {
