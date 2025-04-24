@@ -98,7 +98,7 @@ import Footer from "../components/footer-content/Footer.astro";
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const initializeSlider = (selector, controls = false) => {
+        const initializeSlider = (selector: string, controls = false) => {
             const slider = document.querySelector(selector) as HTMLElement;
             if (!slider) return;
 
