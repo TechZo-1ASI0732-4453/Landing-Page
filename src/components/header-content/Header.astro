@@ -55,7 +55,12 @@
             border-radius: 8px;
         }
 
-        .header-button .button {
+        .header-buttons {
+            display: flex;
+            gap: 10px; /* Espaciado entre los botones */
+        }
+        
+        .header-buttons .button {
             background-color: transparent;
             border: black 2px solid;
             color: black;
@@ -66,8 +71,8 @@
             border-radius: 5px;
             transition: background-color 0.3s, color 0.3s;
         }
-
-        .header-button :hover {
+        
+        .header-buttons .button:hover {
             background-color: #ffffff;
             color: #000000;
         }
@@ -143,8 +148,9 @@
                 <li><a href="#contact-us">Contáctanos</a></li>
             </ul>
         </nav>
-        <div class="header-button">
-            <a href="https://play.google.com/store" class="button">Descarga Ahora!</a>
+        <div class="header-buttons">
+            <a href="" class="button">Pruébalo ahora</a>
+            <a href="https://play.google.com/store" class="button">Descargar ahora</a>
         </div>
         <div class="menu-icon">
             <img src="/assets/images/icons/menu-icon.png" alt="Menu Icon">
