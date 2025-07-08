@@ -49,7 +49,8 @@
     "swipe": "Desliza para ver más"
   },
   "principal": {
-    "title": "Intercambios Sostenibles, <span class=\"highlight\">Simplificados</span>",
+    "title": "Intercambios Sostenibles,",
+    "simplified": "Simplificados",
     "desc": "Con CambiaZo, puedes intercambiar, donar y conectar con usuarios para promover un estilo de vida sostenible, donde el valor de cada artículo sigue fluyendo.",
     "security": {
       "title": "Seguridad",
@@ -74,7 +75,37 @@
   },
   "plans": {
     "title": "Mejora Tu Experiencia",
-    "desc": "Explora nuestros planes Premium para acceso exclusivo, funciones avanzadas y soporte prioritario. ¡Únete y mejora tu experiencia hoy!"
+    "desc": "Explora nuestros planes Premium para acceso exclusivo, funciones avanzadas y soporte prioritario. ¡Únete y mejora tu experiencia hoy!",
+    "lite": {
+      "name": "Lite",
+      "price": "GRATIS",
+      "desc": "Gratis para todos los usuarios",
+      "features": [
+        "Intercambios limitados.",
+        "Anuncios moderados."
+      ],
+      "button": "¡Empieza ahora!"
+    },
+    "premium": {
+      "name": "Premium",
+      "price": "$3.99/mes",
+      "desc": "Para usuarios expertos al CambiaZo",
+      "features": [
+        "Intercambios ilimitados.",
+        "Servicio de garantía."
+      ],
+      "button": "¡Empieza ahora!"
+    },
+    "plus": {
+      "name": "Plus",
+      "price": "$2.99/mes",
+      "desc": "Para usuarios aficionados al CambiaZo",
+      "features": [
+        "Intercambios semi-limitados.",
+        "Libre de anuncios."
+      ],
+      "button": "¡Empieza ahora!"
+    }
   },
   "header": {
     "nav": {
@@ -90,10 +121,21 @@
   },
   "footer": {
     "logo": "CambiaZo",
-    "rights": "Todos los derechos reservados © {{year}}. TechZo",
+    "rights": "Todos los derechos reservados © 2025. TechZo",
     "support": "Soporte",
     "privacy": "Privacidad",
     "terms": "Términos",
     "releases": "Lanzamientos"
+  },
+  "contact": {
+    "title": "¡Únete a CambiaZo!",
+    "desc": "Entérate de todas las novedades y contribuye a nuestra misión de sostenibilidad. Suscríbete para recibir nuestras últimas noticias.",
+    "form": {
+      "name": "Nombre*",
+      "lastname": "Apellido*",
+      "email": "Correo electrónico*",
+      "button": "Suscribirse"
+    },
+    "privacy": "Todos los datos están protegidos por nuestra <a href=\"#\">Política de privacidad</a>. Lea los Términos y condiciones <a href=\"#\">aquí</a>."
   }
 }

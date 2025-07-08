@@ -49,7 +49,8 @@
     "swipe": "Swipe to see more"
   },
   "principal": {
-    "title": "Sustainable Exchanges, <span class=\"highlight\">Simplified</span>",
+    "title": "Sustainable Exchanges,",
+    "simplified": "Simplified",
     "desc": "With CambiaZo, you can exchange, donate, and connect with users to promote a sustainable lifestyle, where the value of each item keeps flowing.",
     "security": {
       "title": "Security",
@@ -74,7 +75,37 @@
   },
   "plans": {
     "title": "Enhance Your Experience",
-    "desc": "Explore our Premium plans for exclusive access, advanced features, and priority support. Join and enhance your experience today!"
+    "desc": "Explore our Premium plans for exclusive access, advanced features, and priority support. Join and enhance your experience today!",
+    "lite": {
+      "name": "Lite",
+      "price": "FREE",
+      "desc": "Free for all users",
+      "features": [
+        "Limited exchanges.",
+        "Moderate ads."
+      ],
+      "button": "Start now!"
+    },
+    "premium": {
+      "name": "Premium",
+      "price": "$3.99/mo",
+      "desc": "For expert users at CambiaZo",
+      "features": [
+        "Unlimited exchanges.",
+        "Warranty service."
+      ],
+      "button": "Start now!"
+    },
+    "plus": {
+      "name": "Plus",
+      "price": "$2.99/mo",
+      "desc": "For CambiaZo enthusiasts",
+      "features": [
+        "Semi-limited exchanges.",
+        "Ad-free."
+      ],
+      "button": "Start now!"
+    }
   },
   "header": {
     "nav": {
@@ -90,10 +121,21 @@
   },
   "footer": {
     "logo": "CambiaZo",
-    "rights": "All rights reserved © {{year}}. TechZo",
+    "rights": "All rights reserved © 2025. TechZo",
     "support": "Support",
     "privacy": "Privacy",
     "terms": "Terms",
     "releases": "Releases"
+  },
+  "contact": {
+    "title": "Join CambiaZo!",
+    "desc": "Stay up to date and contribute to our sustainability mission. Subscribe to receive our latest news.",
+    "form": {
+      "name": "First Name*",
+      "lastname": "Last Name*",
+      "email": "Email*",
+      "button": "Subscribe"
+    },
+    "privacy": "All data is protected by our <a href=\"#\">Privacy Policy</a>. Read the Terms and Conditions <a href=\"#\">here</a>."
   }
 }
