@@ -1,29 +1,35 @@
 ---
-
+const lang = Astro.url?.searchParams.get('lang') || 'es';
+import { t } from '../../utils/i18n.js';
+const translate = (key: string) => t(key, lang);
 ---
 
 <footer id="footer">
     <div class="footer-container">
-        <h1 class="footer-logo">CambiaZo</h1>
+        <h1 class="footer-logo" data-i18n="footer.logo">{translate('footer.logo')}</h1>
         <div class="footer-bottom">
-            <p class="rights">All rights reserved © 2024. TechZo</p>
+            <p class="rights" data-i18n="footer.rights">{translate('footer.rights')}</p>
             <div class="footer-right">
                 <div class="footer-links">
-                    <a href="#">Support</a>
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
-                    <a href="#">Releases</a>
+                    <a href="#" data-i18n="footer.support">{translate('footer.support')}</a>
+                    <a href="#" data-i18n="footer.privacy">{translate('footer.privacy')}</a>
+                    <a href="#" data-i18n="footer.terms">{translate('footer.terms')}</a>
                 </div>
-                <div class="social-icons">
-                    <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/experimentos/public/assets/images/icons/icon-facebook.png?raw=true" alt="Facebook" class="social-icon" />
-                    <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/experimentos/public/assets/images/icons/icon-twitter.png?raw=true" alt="Twitter" class="social-icon" />
-                    <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/experimentos/public/assets/images/icons/icon-youtube.png?raw=true" alt="YouTube" class="social-icon" />
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/experimentos/public/assets/images/icons/icon-facebook.png?raw=true" alt="Facebook" />
+                    </a>
+                    <a href="https://twitter.com/" target="_blank">
+                        <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/experimentos/public/assets/images/icons/icon-twitter.png?raw=true" alt="Twitter" />
+                    </a>
+                    <a href="https://www.youtube.com/" target="_blank">
+                        <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/experimentos/public/assets/images/icons/icon-youtube.png?raw=true" alt="YouTube" />
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </footer>
-
 
 <style>
     #footer {
@@ -82,20 +88,20 @@
         color: #FFD146;
     }
 
-    .social-icons {
+    .footer-social {
         display: flex;
         gap: 15px;
         margin-top: 10px;
     }
 
-    .social-icon {
+    .footer-social a {
         width: 30px;
         height: auto;
         cursor: pointer;
         transition: transform 0.3s ease;
     }
 
-    .social-icon:hover {
+    .footer-social a:hover {
         transform: scale(1.1);
     }
 
@@ -133,7 +139,7 @@
             gap: 15px;
         }
 
-        .social-icons {
+        .footer-social {
             justify-content: center;
         }
 

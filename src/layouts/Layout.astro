@@ -1,24 +1,30 @@
 ---
+import { t } from '../utils/i18n.js';
+
 interface Props {
 	title: string;
 }
 
+const { title } = Astro.props;
+const lang = Astro.url?.searchParams.get('lang') || 'es';
+const translate = (key: string) => t(key, lang);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Cambia, dona y disfruta." />
+		<meta name="description" content={translate('hero.description')} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/assets/images/icons/cambiazo-icon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>CambiaZo</title>
+		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
+
 <style is:global>
 	:root {
 		--accent: 136, 58, 234;

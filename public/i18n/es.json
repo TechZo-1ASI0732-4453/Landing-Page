@@ -1,0 +1,99 @@
+{
+  "hero": {
+    "title": "Más que un Intercambio",
+    "description": "CambiaZo te permite dar nueva vida a tus objetos mientras intercambias y donas para un mundo más sostenible. ¡Únete!",
+    "button": "Intercambia ahora"
+  },
+  "features": {
+    "title": "Sobre Nosotros",
+    "subtitle": "Descubre quienes son los responsables de que CambiaZo sea una realidad.",
+    "about_title": "¿Quiénes Somos?",
+    "about_text": "CambiaZo es una plataforma innovadora que permite a las personas intercambiar y donar objetos que ya no usan. Nuestro objetivo es promover un estilo de vida más sostenible, donde cada objeto tenga un propósito y un impacto positivo.",
+    "members": [
+      {
+        "name": "Ian Santisteban",
+        "role": "Scrum Master",
+        "desc": "Ian tiene una amplia experiencia en la gestión de equipos ágiles y optimización de procesos."
+      },
+      {
+        "name": "Jeremy Quispe",
+        "role": "Product Owner",
+        "desc": "Jeremy se especializa en la planificación estratégica y la coordinación de proyectos tecnológicos."
+      },
+      {
+        "name": "Mathias Mendoza",
+        "role": "Developer",
+        "desc": "Mathias es un desarrollador apasionado por crear soluciones innovadoras y eficientes."
+      },
+      {
+        "name": "Joseph Huamani",
+        "role": "Developer",
+        "desc": "Joseph destaca por su habilidad en el desarrollo de aplicaciones escalables y robustas."
+      }
+    ]
+  },
+  "cards": {
+    "title": "Descubre las ventajas de ser parte de nuestra comunidad",
+    "subtitle": "Explora cómo puedes intercambiar o donar objetos a través de nuestra app.",
+    "exchange": {
+      "title": "Intercambios",
+      "desc": "Accede a una red confiable donde puedes intercambiar bienes de manera rápida y segura."
+    },
+    "donation": {
+      "title": "Donaciones",
+      "desc": "Ayuda a quienes más lo necesitan donando artículos en buen estado que ya no usas."
+    }
+  },
+  "carousel": {
+    "title": "Descubre todo lo que puedes intercambiar",
+    "swipe": "Desliza para ver más"
+  },
+  "principal": {
+    "title": "Intercambios Sostenibles, <span class=\"highlight\">Simplificados</span>",
+    "desc": "Con CambiaZo, puedes intercambiar, donar y conectar con usuarios para promover un estilo de vida sostenible, donde el valor de cada artículo sigue fluyendo.",
+    "security": {
+      "title": "Seguridad",
+      "desc": "Intercambia y dona en un entorno seguro."
+    },
+    "items": {
+      "title": "Artículos",
+      "desc": "Gran variedad de artículos de distintas categorías."
+    },
+    "community": {
+      "title": "Comunidad",
+      "desc": "Conéctate con usuarios que comparten e impulsan."
+    },
+    "sustainable": {
+      "title": "Sostenible",
+      "desc": "Reduce la huella de carbono con cada intercambio."
+    }
+  },
+  "ongs": {
+    "title": "Nuestras ONGs afiliadas",
+    "desc": "Contamos con una variedad muy amplia de organizaciones benéficas unidas por el desarrollo sostenible y la contribución con la mayoría de la sociedad peruana."
+  },
+  "plans": {
+    "title": "Mejora Tu Experiencia",
+    "desc": "Explora nuestros planes Premium para acceso exclusivo, funciones avanzadas y soporte prioritario. ¡Únete y mejora tu experiencia hoy!"
+  },
+  "header": {
+    "nav": {
+      "nosotros": "Nosotros",
+      "caracteristicas": "Características",
+      "planes": "Planes",
+      "contactanos": "Contáctanos"
+    },
+    "buttons": {
+      "pruebalo": "Pruébalo ahora",
+      "intercambia": "Intercambia ahora"
+    }
+  },
+  "footer": {
+    "logo": "CambiaZo",
+    "rights": "Todos los derechos reservados © {{year}}. TechZo",
+    "support": "Soporte",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "releases": "Lanzamientos"
+  }
+}

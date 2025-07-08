@@ -1,3 +1,9 @@
+---
+const lang = Astro.url?.searchParams.get('lang') || 'es';
+import { t } from '../../utils/i18n.js';
+const translate = (key: string) => t(key, lang);
+---
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,7 +63,7 @@
 
         .header-buttons {
             display: flex;
-            gap: 10px; /* Espaciado entre los botones */
+            gap: 10px;
         }
         
         .header-buttons .button {
@@ -85,6 +91,22 @@
         .menu-icon img {
             width: 35px;
             cursor: pointer;
+        }
+
+        /* Estilos para el selector de idioma */
+        .lang-switcher {
+            padding: 5px 10px;
+            border: 2px solid black;
+            border-radius: 5px;
+            background-color: transparent;
+            font-weight: 650;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+
+        .lang-switcher:hover {
+            background-color: #ffffff;
         }
 
         @media (max-width: 768px) {
@@ -124,12 +146,15 @@
                 width: 110px;
                 margin-right: 10px;
             }
+
+            .lang-switcher {
+                margin: 0 5px;
+            }
         }
 
         body {
             padding-top: 80px;
         }
-
     </style>
 </head>
 <body>
@@ -142,15 +167,19 @@
         </div>
         <nav class="navbar">
             <ul>
-                <li><a href="#features">Nosotros</a></li>
-                <li><a href="#cards">Características</a></li>
-                <li><a href="#plans">Planes</a></li>
-                <li><a href="#contact-us">Contáctanos</a></li>
+                <li><a href="#features" data-i18n="header.nav.nosotros">{translate('header.nav.nosotros')}</a></li>
+                <li><a href="#cards" data-i18n="header.nav.caracteristicas">{translate('header.nav.caracteristicas')}</a></li>
+                <li><a href="#plans" data-i18n="header.nav.planes">{translate('header.nav.planes')}</a></li>
+                <li><a href="#contact-us" data-i18n="header.nav.contactanos">{translate('header.nav.contactanos')}</a></li>
             </ul>
         </nav>
+        <select id="lang-switcher" class="lang-switcher">
+            <option value="en" selected={lang === 'en'}>EN</option>
+            <option value="es" selected={lang === 'es'}>ES</option>
+        </select>
         <div class="header-buttons">
-            <a href="" class="button">Pruébalo ahora</a>
-            <a href="https://play.google.com/store" class="button">Intercambia ahora</a>
+            <a href="" class="button" data-i18n="header.buttons.pruebalo">{translate('header.buttons.pruebalo')}</a>
+            <a href="https://play.google.com/store" class="button" data-i18n="header.buttons.intercambia">{translate('header.buttons.intercambia')}</a>
         </div>
         <div class="menu-icon">
             <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/experimentos/public/assets/images/icons/menu-icon.png?raw=true" alt="Menu Icon">
@@ -160,18 +189,30 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const menuIcon = document.querySelector('.menu-icon') as HTMLElement | null;
-        const navbar = document.querySelector('.navbar') as HTMLElement | null;
+        // Mobile menu
+        const menuIcon = document.querySelector('.menu-icon');
+        const navbar = document.querySelector('.navbar');
 
         if (menuIcon && navbar) {
             menuIcon.addEventListener('click', () => {
                 navbar.classList.toggle('active');
             });
-        } else {
-            console.error('menuIcon o navbar no encontrados.');
+        }
+
+        // Language switcher
+        const langSwitcher = document.getElementById('lang-switcher') as HTMLSelectElement;
+        if (langSwitcher) {
+            langSwitcher.value = new URL(window.location.href).searchParams.get('lang') || 'es';
+            langSwitcher.addEventListener('change', (e) => {
+                const target = e.target as HTMLSelectElement;
+                if (target && target.value) {
+                    const url = new URL(window.location.href);
+                    url.searchParams.set('lang', target.value);
+                    window.location.href = url.toString();
+                }
+            });
         }
     });
 </script>
-
 
 </body>

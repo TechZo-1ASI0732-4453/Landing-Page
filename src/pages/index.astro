@@ -2,6 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Header from "../components/header-content/Header.astro";
 import Footer from "../components/footer-content/Footer.astro";
+
+const lang = Astro.url?.searchParams.get('lang') || 'es';
+import { t } from '../utils/i18n.js';
+const translate = (key: string) => t(key, lang);
 ---
 
 <script>
@@ -301,12 +305,12 @@ import Footer from "../components/footer-content/Footer.astro";
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1 class="hero-title">Más que un Intercambio</h1>
-                <p class="hero-description">CambiaZo te permite dar nueva vida a tus objetos mientras intercambias y donas para un mundo más sostenible. ¡Únete!</p>
+                <h1 class="hero-title" data-i18n="hero.title">{translate('hero.title')}</h1>
+                <p class="hero-description" data-i18n="hero.description">{translate('hero.description')}</p>
                 <div class="play-store-button-container">
                     <a href="https://cambia-zo.netlify.app/home" target="_blank">
-                        <button class="hero-button">
-                        Intercambia ahora
+                        <button class="hero-button" data-i18n="hero.button">
+                        {translate('hero.button')}
                         </button>
                     </a>
                 </div>
@@ -316,83 +320,78 @@ import Footer from "../components/footer-content/Footer.astro";
             </div>
         </section>
 
-
-
-    <section id="features" >
-        <h2 style="margin-top: 6.5rem">Sobre Nosotros</h2>
-        <p class="p-1">Descubre quienes son los responsables de que CambiaZo sea una realidad.</p>
-        <section id="about-us">
-            <div class="slider">
-                <!-- Pantalla 1: Información de la Startup -->
-                <div class="slide active-slide">
-                    <div class="about-content">
-                        <div class="about-info">
-                            <h1 class="quienes-somos-h2">¿Quiénes Somos?</h1>
-                            <p>
-                                CambiaZo es una plataforma innovadora que permite a las personas intercambiar y donar objetos que ya no usan.
-                                Nuestro objetivo es promover un estilo de vida más sostenible, donde cada objeto tenga un propósito y un impacto positivo.
-                            </p>
-                        </div>
-                        <div class="about-video">
-                            <video controls width="80%" height="100%">
-                                <source src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/about-us/video%20about%20the%20team.mp4?raw=true" type="video/mp4">
-                                Tu navegador no soporta el elemento de video.
-                            </video>
+        <section id="features">
+            <h2 style="margin-top: 6.5rem" data-i18n="features.title">{translate('features.title')}</h2>
+            <p class="p-1" data-i18n="features.subtitle">{translate('features.subtitle')}</p>
+            <section id="about-us">
+                <div class="slider">
+                    <!-- Pantalla 1: Información de la Startup -->
+                    <div class="slide active-slide">
+                        <div class="about-content">
+                            <div class="about-info">
+                                <h1 class="quienes-somos-h2" data-i18n="features.about_title">{translate('features.about_title')}</h1>
+                                <p data-i18n="features.about_text">{translate('features.about_text')}</p>
+                            </div>
+                            <div class="about-video">
+                                <video controls width="80%" height="100%">
+                                    <source src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/about-us/video%20about%20the%20team.mp4?raw=true" type="video/mp4">
+                                    Tu navegador no soporta el elemento de video.
+                                </video>
+                            </div>
                         </div>
                     </div>
-                </div>
-    
-                <!-- Pantalla 2: Cards de miembros -->
-                <div class="slide">
-                    <div class="about-cards">
-                        <a href="https://www.linkedin.com/in/ian-santisteban-palomino/" target="_blank" class="about-card">
-                            <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/about-us/IanSantisteban.png?raw=true" alt="Ian">
-                            <h3>Ian Santisteban</h3>
-                            <p class="role">Scrum Master</p>
-                            <p>Ian tiene una amplia experiencia en la gestión de equipos ágiles y optimización de procesos.</p>
-                        </a>
-                        <a href="https://www.linkedin.com/in/jeremyquispe/" target="_blank" class="about-card">
-                            <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/about-us/JeremyQuispe.jpeg?raw=true" alt="Jeremy">
-                            <h3>Jeremy Quispe</h3>
-                            <p class="role">Product Owner</p>
-                            <p>Jeremy se especializa en la planificación estratégica y la coordinación de proyectos tecnológicos.</p>
-                        </a>
-                        <a href="https://www.linkedin.com/in/mathias-mendoza-carri%C3%B3n-08369632b/" target="_blank" class="about-card">
-                            <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/about-us/MathiasMendoza.png?raw=true" alt="Mathias">
-                            <h3>Mathias Mendoza</h3>
-                            <p class="role">Developer</p>
-                            <p>Mathias es un desarrollador apasionado por crear soluciones innovadoras y eficientes.</p>
-                        </a>
-                        <a href="https://www.linkedin.com/in/joseph-huamani-mandujano/" target="_blank" class="about-card">
-                            <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/about-us/JosephHuamani.png?raw=true" alt="Joseph">
-                            <h3>Joseph Huamani</h3>
-                            <p class="role">Developer</p>
-                            <p>Joseph destaca por su habilidad en el desarrollo de aplicaciones escalables y robustas.</p>
-                        </a>
-                    </div>
-                </div>
-    
-                <!-- Controles del Slider -->
-                <div class="slider-controls">
-                    <button class="slider-prev">&#10094;</button>
-                    <button class="slider-next">&#10095;</button>
-                </div>
-            </div>
-        </section>
-    </section>
-
-                <div class="separating-line"></div>
         
-        <h2 id="cards" style="margin-top: 5rem;">Descubre las ventajas de ser parte de nuestra comunidad</h2>
-        <p class="p-1">Explora cómo puedes intercambiar o donar objetos a través de nuestra app.</p>
+                    <!-- Pantalla 2: Cards de miembros -->
+                    <div class="slide">
+                        <div class="about-cards">
+                            <a href="https://www.linkedin.com/in/ian-santisteban-palomino/" target="_blank" class="about-card">
+                                <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/about-us/IanSantisteban.png?raw=true" alt="Ian">
+                                <h3 data-i18n="features.members.0.name">{translate('features.members.0.name')}</h3>
+                                <p class="role" data-i18n="features.members.0.role">{translate('features.members.0.role')}</p>
+                                <p data-i18n="features.members.0.desc">{translate('features.members.0.desc')}</p>
+                            </a>
+                            <a href="https://www.linkedin.com/in/jeremyquispe/" target="_blank" class="about-card">
+                                <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/about-us/JeremyQuispe.jpeg?raw=true" alt="Jeremy">
+                                <h3 data-i18n="features.members.1.name">{translate('features.members.1.name')}</h3>
+                                <p class="role" data-i18n="features.members.1.role">{translate('features.members.1.role')}</p>
+                                <p data-i18n="features.members.1.desc">{translate('features.members.1.desc')}</p>
+                            </a>
+                            <a href="https://www.linkedin.com/in/mathias-mendoza-carri%C3%B3n-08369632b/" target="_blank" class="about-card">
+                                <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/about-us/MathiasMendoza.png?raw=true" alt="Mathias">
+                                <h3 data-i18n="features.members.2.name">{translate('features.members.2.name')}</h3>
+                                <p class="role" data-i18n="features.members.2.role">{translate('features.members.2.role')}</p>
+                                <p data-i18n="features.members.2.desc">{translate('features.members.2.desc')}</p>
+                            </a>
+                            <a href="https://www.linkedin.com/in/joseph-huamani-mandujano/" target="_blank" class="about-card">
+                                <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/about-us/JosephHuamani.png?raw=true" alt="Joseph">
+                                <h3 data-i18n="features.members.3.name">{translate('features.members.3.name')}</h3>
+                                <p class="role" data-i18n="features.members.3.role">{translate('features.members.3.role')}</p>
+                                <p data-i18n="features.members.3.desc">{translate('features.members.3.desc')}</p>
+                            </a>
+                        </div>
+                    </div>
+        
+                    <!-- Controles del Slider -->
+                    <div class="slider-controls">
+                        <button class="slider-prev">&#10094;</button>
+                        <button class="slider-next">&#10095;</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <div class="separating-line"></div>
+        
+        <h2 id="cards" style="margin-top: 5rem;" data-i18n="cards.title">{translate('cards.title')}</h2>
+        <p class="p-1" data-i18n="cards.subtitle">{translate('cards.subtitle')}</p>
         <div class="feature-cards" style="margin-bottom: 7rem">
             <div class="card blue-card">
                 <div class="content">
                     <div class="title-icon">
                         <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/cards/icons/icon-exchange.png?raw=true" alt="Intercambio Icon" class="icon" />
-                        <h3>Intercambios</h3>
+                        <h3 data-i18n="cards.exchange.title">{translate('cards.exchange.title')}</h3>
                     </div>
-                    <p>Accede a una red confiable donde puedes intercambiar bienes de manera rápida y segura.</p>
+                    <p data-i18n="cards.exchange.desc">{translate('cards.exchange.desc')}</p>
                 </div>
                 <div class="image-container group">
                     <div class="card-image" style="background-image: url('https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/cards/intercambio1.png?raw=true');"></div>
@@ -405,9 +404,9 @@ import Footer from "../components/footer-content/Footer.astro";
                 <div class="content">
                     <div class="title-icon">
                         <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/cards/icons/icon-donate.png?raw=true" alt="Donacion Icon" class="icon" />
-                        <h3>Donaciones</h3>
+                        <h3 data-i18n="cards.donation.title">{translate('cards.donation.title')}</h3>
                     </div>
-                    <p>Ayuda a quienes más lo necesitan donando artículos en buen estado que ya no usas.</p>
+                    <p data-i18n="cards.donation.desc">{translate('cards.donation.desc')}</p>
                 </div>
                 <div class="image-container group">
                     <div class="card-image" style="background-image: url('https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/cards/donaciones1.png?raw=true');"></div>
@@ -421,7 +420,7 @@ import Footer from "../components/footer-content/Footer.astro";
         <section id="carrousel-images">
         <div class="carousel-content">
             <div class="carousel-header">
-                <h2>Descubre todo lo que puedes intercambiar</h2>
+                <h2 data-i18n="carousel.title">{translate('carousel.title')}</h2>
                 <div class="carousel-controls">
                     <button class="carousel-prev">&#10094;</button>
                     <button class="carousel-next">&#10095;</button>
@@ -459,7 +458,7 @@ import Footer from "../components/footer-content/Footer.astro";
                         </div>
                     </div>
                     <div class="swipe-indicator">
-                        <p>Desliza para ver más</p>
+                        <p data-i18n="carousel.swipe">{translate('carousel.swipe')}</p>
                     </div>
                 </div>
             </div>
@@ -469,45 +468,40 @@ import Footer from "../components/footer-content/Footer.astro";
         <section id="principal-items">
         <div class="main-content">
             <div class="text-section">
-                <h1>Intercambios Sostenibles, <span class="highlight">Simplificados</span></h1>
-                <p>
-                    Con CambiaZo, puedes intercambiar, donar y conectar con usuarios para promover un estilo de vida sostenible, donde el valor de cada artículo sigue fluyendo.
-                </p>
+                <h1 data-i18n-html="principal.title">{translate('principal.title')}</h1>
+                <p data-i18n="principal.desc">{translate('principal.desc')}</p>
             </div>
             <div class="icons-section">
                 <div class="icon-item">
                     <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/icons/escudo-icon.png?raw=true" alt="Seguridad" class="icon" />
-                    <h3>Seguridad</h3>
-                    <p>Intercambia y dona en un entorno seguro.</p>
+                    <h3 data-i18n="principal.security.title">{translate('principal.security.title')}</h3>
+                    <p data-i18n="principal.security.desc">{translate('principal.security.desc')}</p>
                 </div>
                 <div class="icon-item">
                     <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/icons/exchange-icon.png?raw=true" alt="Artículos" class="icon" />
-                    <h3>Artículos</h3>
-                    <p>Gran variedad de artículos de distintas categorías.</p>
+                    <h3 data-i18n="principal.items.title">{translate('principal.items.title')}</h3>
+                    <p data-i18n="principal.items.desc">{translate('principal.items.desc')}</p>
                 </div>
                 <div class="icon-item">
                     <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/icons/comunidad-icon.png?raw=true" alt="Comunidad" class="icon" />
-                    <h3>Comunidad</h3>
-                    <p>Conéctate con usuarios que comparten e impulsan.</p>
+                    <h3 data-i18n="principal.community.title">{translate('principal.community.title')}</h3>
+                    <p data-i18n="principal.community.desc">{translate('principal.community.desc')}</p>
                 </div>
                 <div class="icon-item">
                     <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/icons/sostenible-icon.png?raw=true" alt="Sostenible" class="icon" />
-                    <h3>Sostenible</h3>
-                    <p>Reduce la huella de carbono con cada intercambio.</p>
+                    <h3 data-i18n="principal.sustainable.title">{translate('principal.sustainable.title')}</h3>
+                    <p data-i18n="principal.sustainable.desc">{translate('principal.sustainable.desc')}</p>
                 </div>
             </div>
         </div>
     </section>
 
-
         <section id="ONGs" class="ongs-section">
         <div class="separating-line"></div>
     
         <div class="container-ong">
-            <h2>Nuestras ONGs afiliadas</h2>
-            <p>
-                Contamos con una variedad muy amplia de organizaciones benéficas unidas por el desarrollo sostenible y la contribución con la mayoría de la sociedad peruana.
-            </p>
+            <h2 data-i18n="ongs.title">{translate('ongs.title')}</h2>
+            <p data-i18n="ongs.desc">{translate('ongs.desc')}</p>
     
             <div class="ong-slider">
                 <input type="radio" name="ong-testimonial" id="ong-1" />
@@ -557,8 +551,8 @@ import Footer from "../components/footer-content/Footer.astro";
 
     <section id="plans">
         <div class="plans-container">
-            <h2>Mejora Tu Experiencia</h2>
-            <p>Explora nuestros planes Premium para acceso exclusivo, funciones avanzadas y soporte prioritario. ¡Únete y mejora tu experiencia hoy!</p>
+            <h2 data-i18n="plans.title">{translate('plans.title')}</h2>
+            <p data-i18n="plans.desc">{translate('plans.desc')}</p>
             <div class="plans">
                 <div class="plan plan-lite">
                     <h3>Lite</h3>
@@ -649,7 +643,6 @@ import Footer from "../components/footer-content/Footer.astro";
         </section>
     </div>
     </main>
-
 
     <Footer></Footer>
 

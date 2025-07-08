@@ -12,7 +12,10 @@
   "dependencies": {
     "@astrojs/check": "^0.9.3",
     "@astrojs/netlify": "^6.3.1",
+    "@ngx-translate/core": "^16.0.4",
+    "@ngx-translate/http-loader": "^16.0.1",
     "astro": "^5.7.5",
+    "i18next": "^25.3.1",
     "typescript": "^5.6.2"
   }
 }
