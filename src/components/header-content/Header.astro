@@ -155,6 +155,34 @@ const translate = (key: string) => t(key, lang);
         body {
             padding-top: 80px;
         }
+
+        .header-buttons.desktop-only {
+            display: flex;
+            gap: 10px;
+        }
+        .mobile-menu-buttons {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .header-buttons.desktop-only {
+                display: none;
+            }
+            .mobile-menu-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            .navbar ul {
+                flex-direction: column;
+            }
+            .navbar ul .mobile-menu-buttons a.button {
+                width: 100%;
+                text-align: left;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -171,18 +199,22 @@ const translate = (key: string) => t(key, lang);
                 <li><a href="#cards" data-i18n="header.nav.caracteristicas">{translate('header.nav.caracteristicas')}</a></li>
                 <li><a href="#plans" data-i18n="header.nav.planes">{translate('header.nav.planes')}</a></li>
                 <li><a href="#contact-us" data-i18n="header.nav.contactanos">{translate('header.nav.contactanos')}</a></li>
+                <li class="mobile-menu-buttons">
+                    <a href="" class="button" data-i18n="header.buttons.pruebalo">{translate('header.buttons.pruebalo')}</a>
+                    <a href="https://play.google.com/store" class="button" data-i18n="header.buttons.intercambia">{translate('header.buttons.intercambia')}</a>
+                </li>
             </ul>
         </nav>
         <select id="lang-switcher" class="lang-switcher">
             <option value="en" selected={lang === 'en'}>EN</option>
             <option value="es" selected={lang === 'es'}>ES</option>
         </select>
-        <div class="header-buttons">
+        <div class="header-buttons desktop-only">
             <a href="" class="button" data-i18n="header.buttons.pruebalo">{translate('header.buttons.pruebalo')}</a>
             <a href="https://play.google.com/store" class="button" data-i18n="header.buttons.intercambia">{translate('header.buttons.intercambia')}</a>
         </div>
         <div class="menu-icon">
-            <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/experimentos/public/assets/images/icons/menu-icon.png?raw=true" alt="Menu Icon">
+            <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/icons/menu-icon.png?raw=true" alt="Menu Icon">
         </div>
     </div>
 </header>
