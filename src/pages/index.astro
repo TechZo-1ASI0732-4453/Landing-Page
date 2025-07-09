@@ -63,6 +63,49 @@ const translate = (key: string) => t(key, lang);
     });
 
 </script>
+<script>
+document.querySelectorAll('.tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'))
+    tab.classList.add('active')
+  })
+})
+</script>
+
+<script>
+const tabs = document.querySelectorAll<HTMLElement>('.tab');
+tabs.forEach((tab: HTMLElement) => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const targetId = tab.dataset.target!;
+    document.querySelectorAll<HTMLElement>('.tab-content').forEach(c => c.classList.remove('active'));
+    document.getElementById(targetId)!.classList.add('active');
+  });
+});
+
+let currentSlide = 0;
+const slides = document.querySelectorAll<HTMLElement>('.slider .slide');
+const prevBtn = document.querySelector<HTMLButtonElement>('.slider-prev')!;
+const nextBtn = document.querySelector<HTMLButtonElement>('.slider-next')!;
+
+const showSlide = (index: number) => {
+  slides.forEach(s => s.classList.remove('active-slide'));
+  slides[index].classList.add('active-slide');
+};
+
+prevBtn.addEventListener('click', () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+});
+
+nextBtn.addEventListener('click', () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+});
+
+</script>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -321,64 +364,265 @@ const translate = (key: string) => t(key, lang);
         </section>
 
         <section id="features">
-            <h2 style="margin-top: 6.5rem" data-i18n="features.title">{translate('features.title')}</h2>
-            <p class="p-1" data-i18n="features.subtitle">{translate('features.subtitle')}</p>
-            <section id="about-us">
-                <div class="slider">
-                    <!-- Pantalla 1: Información de la Startup -->
-                    <div class="slide active-slide">
-                        <div class="about-content">
-                            <div class="about-info">
-                                <h1 class="quienes-somos-h2" data-i18n="features.about_title">{translate('features.about_title')}</h1>
-                                <p data-i18n="features.about_text">{translate('features.about_text')}</p>
-                            </div>
-                            <div class="about-video">
-                                <video controls width="80%" height="100%">
-                                    <source src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/about-us/video%20about%20the%20team.mp4?raw=true" type="video/mp4">
-                                    Tu navegador no soporta el elemento de video.
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <!-- Pantalla 2: Cards de miembros -->
-                    <div class="slide">
-                        <div class="about-cards">
-                            <a href="https://www.linkedin.com/in/ian-santisteban-palomino/" target="_blank" class="about-card">
-                                <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/about-us/IanSantisteban.png?raw=true" alt="Ian">
-                                <h3 data-i18n="features.members.0.name">{translate('features.members.0.name')}</h3>
-                                <p class="role" data-i18n="features.members.0.role">{translate('features.members.0.role')}</p>
-                                <p data-i18n="features.members.0.desc">{translate('features.members.0.desc')}</p>
-                            </a>
-                            <a href="https://www.linkedin.com/in/jeremyquispe/" target="_blank" class="about-card">
-                                <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/about-us/JeremyQuispe.jpeg?raw=true" alt="Jeremy">
-                                <h3 data-i18n="features.members.1.name">{translate('features.members.1.name')}</h3>
-                                <p class="role" data-i18n="features.members.1.role">{translate('features.members.1.role')}</p>
-                                <p data-i18n="features.members.1.desc">{translate('features.members.1.desc')}</p>
-                            </a>
-                            <a href="https://www.linkedin.com/in/mathias-mendoza-carri%C3%B3n-08369632b/" target="_blank" class="about-card">
-                                <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/about-us/MathiasMendoza.png?raw=true" alt="Mathias">
-                                <h3 data-i18n="features.members.2.name">{translate('features.members.2.name')}</h3>
-                                <p class="role" data-i18n="features.members.2.role">{translate('features.members.2.role')}</p>
-                                <p data-i18n="features.members.2.desc">{translate('features.members.2.desc')}</p>
-                            </a>
-                            <a href="https://www.linkedin.com/in/joseph-huamani-mandujano/" target="_blank" class="about-card">
-                                <img src="https://github.com/TechZo-1ASI0732-4453/Landing-Page/blob/main/public/assets/images/about-us/JosephHuamani.png?raw=true" alt="Joseph">
-                                <h3 data-i18n="features.members.3.name">{translate('features.members.3.name')}</h3>
-                                <p class="role" data-i18n="features.members.3.role">{translate('features.members.3.role')}</p>
-                                <p data-i18n="features.members.3.desc">{translate('features.members.3.desc')}</p>
-                            </a>
-                        </div>
-                    </div>
-        
-                    <!-- Controles del Slider -->
-                    <div class="slider-controls">
-                        <button class="slider-prev">&#10094;</button>
-                        <button class="slider-next">&#10095;</button>
-                    </div>
+        <h2 style="margin-top:6.5rem; padding-left:13rem;">Sobre Nosotros</h2>
+        <p class="p-1">Descubre quienes son los responsables de que CambiaZo sea una realidad.</p>
+        <section id="about-us">
+            <div class="slider">
+        <div class="slide active-slide" id="slide-1">
+        <!-- TABS -->
+        <div class="tab-container">
+            <div class="tab active" data-target="team-video">
+        <div class="tab-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+        <g>
+            <g>
+            <path d="M57,44h-6h-6c-3.3,0-6,2.7-6,6v9c0,1.1,0.5,2.1,1.2,2.8c0.7,0.7,1.7,1.2,2.8,1.2v9c0,3.3,2.7,6,6,6h2h2
+                c3.3,0,6-2.7,6-6v-9c1.1,0,2.1-0.4,2.8-1.2c0.7-0.7,1.2-1.7,1.2-2.8v-9C63,46.7,60.3,44,57,44z"/>
+            </g>
+            <g>
+            <circle cx="51" cy="33" r="7"/>
+            </g>
+            <g>
+            <path d="M36.6,66.7c-0.2-0.2-0.5-0.4-0.7-0.6c-1.9-2-3-4.5-3-7.1v-9c0-3.2,1.3-6.2,3.4-8.3c0.6-0.6,0.1-1.7-0.7-1.7
+                c-1.7,0-3.6,0-3.6,0h-6c-3.3,0-6,2.7-6,6v9c0,1.1,0.5,2.1,1.2,2.8c0.7,0.7,1.7,1.2,2.8,1.2v9c0,3.3,2.7,6,6,6h2h2
+                c0.9,0,1.7-0.2,2.4-0.5c0.4-0.2,0.6-0.5,0.6-0.9c0-1.2,0-4,0-5.1C37,67.2,36.9,66.9,36.6,66.7z"/>
+            </g>
+            <g>
+            <circle cx="32" cy="29" r="7"/>
+            </g>
+            <g>
+            <path d="M76,40h-6c0,0-1.9,0-3.6,0c-0.9,0-1.3,1-0.7,1.7c2.1,2.2,3.4,5.1,3.4,8.3v9c0,2.6-1,5.1-3,7.1
+                c-0.2,0.2-0.4,0.4-0.7,0.6c-0.2,0.2-0.4,0.5-0.4,0.8c0,1.1,0,3.8,0,5.1c0,0.4,0.2,0.8,0.6,0.9c0.7,0.3,1.5,0.5,2.4,0.5h2h2
+                c3.3,0,6-2.7,6-6v-9c1.1,0,2.1-0.4,2.8-1.2c0.7-0.7,1.2-1.7,1.2-2.8v-9C82,42.7,79.3,40,76,40z"/>
+            </g>
+            <g>
+            <circle cx="70" cy="29" r="7"/>
+            </g>
+        </g>
+        </svg>
+        </div>
+
+            <div class="tab-text">Video about<br>the team</div>
+            </div>
+            <div class="tab" data-target="product-video">
+            <div class="tab-icon">
+            <svg width="60" height="60" viewBox="0 0 512 512">
+                <g transform="translate(42.666667 21.333333)">
+                <path d="M213.333 85.333c70.693 0 128 57.308 128 128
+                        0 47.378-25.74 88.744-64 110.876v81.124L256 426.667h-21.333
+                        c0 11.782-9.551 21.333-21.334 21.333S192 438.449 192 426.667h-21.333
+                        L149.333 405.333v-81.124C111.074 302.077 85.333 260.711 85.333 213.333
+                        85.333 142.641 142.641 85.333 213.333 85.333Z"/>
+                <path d="M234.668 339.563A170.8 170.8 0 0 1 192 341.333v42.667h42.667v-44.437Z"/>
+                <path d="M96.425 307.614 119.052 330.242 73.798 375.496 51.17 352.869l45.255-45.255Z"/>
+                <path d="M330.242 307.614 375.496 352.869 352.869 375.496 307.614 330.242l22.628-22.628Z"/>
+                <path d="M426.667 197.333v32H362.667v-32h64Z"/>
+                <path d="M64 197.333v32H0v-32h64Z"/>
+                <path d="M352.869 51.17 375.496 73.798 330.242 119.052 307.614 96.425l45.255-45.255Z"/>
+                <path d="M73.798 51.17 119.052 96.425 96.425 119.052 51.17 73.798l22.628-22.628Z"/>
+                <path d="M229.333 0v64H197.333V0h32Z"/>
+                </g>
+            </svg>
+            </div>
+
+            <div class="tab-text">Video about <br>the product</div>
+            </div>
+        </div>
+
+        <!-- CONTENIDOS -->
+        <div class="tab-contents">
+            <!-- SOBRE EL EQUIPO -->
+            <div class="tab-content active" id="team-video">
+            <div class="about-content">
+                <div class="about-info">
+                <h1 class="quienes-somos-h2">¿Quiénes Somos?</h1>
+                <p>
+                    En CambiaZo somos un equipo multidisciplinar apasionado por la innovación y la sostenibilidad.
+                    Combinamos experiencia en Internet de las Cosas, metodologías ágiles y diseño centrado en el usuario
+                    para ofrecer una plataforma de intercambio inteligente. Nuestra misión es conectar objetos físicos al
+                    mundo digital, fomentando un consumo responsable y reduciendo el impacto ambiental.
+                </p>
                 </div>
-            </section>
+                <div class="about-video">
+                <iframe
+                    width="100%"
+                    height="450"
+                    src="https://www.youtube.com/embed/bqYlbluvIF8"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                </div>
+            </div>
+            </div>
+
+            <!-- SOBRE EL PRODUCTO -->
+            <div class="tab-content" id="product-video">
+            <div class="about-content">
+                <div class="about-info">
+                <h1 class="quienes-somos-h2">Sobre el Producto</h1>
+                <p>
+                    CambiaZo integra sensores IoT en cada artículo para monitorizar su estado y ubicación en tiempo real.
+                    Nuestra plataforma web y móvil permite a los usuarios publicar, buscar y concretar intercambios de forma
+                    segura y rápida. Con notificaciones automáticas y trazabilidad completa, reinventamos la manera de
+                    compartir y reutilizar objetos, impulsando una economía circular sostenible.
+                </p>
+                </div>
+                <div class="about-video">
+                <iframe
+                    width="100%"
+                    height="450"
+                    src="https://www.youtube.com/embed/2fL6Q_v7sGk"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+            <div class="slide" id="slide-2">
+                <div class="about-cards">
+                <a href="https://www.linkedin.com/in/ian-santisteban-palomino/" target="_blank" class="about-card">
+                    <img src="/assets/images/about-us/IanSantisteban.png" alt="Ian">
+                    <h3>Ian Santisteban</h3>
+                    <p class="role">Scrum Master</p>
+                    <p>Ian tiene una amplia experiencia en la gestión de equipos ágiles y optimización de procesos.</p>
+                </a>
+                <a href="https://www.linkedin.com/in/jeremyquispe/" target="_blank" class="about-card">
+                    <img src="/assets/images/about-us/JeremyQuispe.jpeg" alt="Jeremy">
+                    <h3>Jeremy Quispe</h3>
+                    <p class="role">Product Owner</p>
+                    <p>Jeremy se especializa en la planificación estratégica y la coordinación de proyectos tecnológicos.</p>
+                </a>
+                <a href="https://www.linkedin.com/in/mathias-mendoza-carri%C3%B3n-08369632b/" target="_blank" class="about-card">
+                    <img src="/assets/images/about-us/MathiasMendoza.png" alt="Mathias">
+                    <h3>Mathias Mendoza</h3>
+                    <p class="role">Developer</p>
+                    <p>Mathias es un desarrollador apasionado por crear soluciones innovadoras y eficientes.</p>
+                </a>
+                <a href="https://www.linkedin.com/in/joseph-huamani-mandujano/" target="_blank" class="about-card">
+                    <img src="/assets/images/about-us/JosephHuamani.png" alt="Joseph">
+                    <h3>Joseph Huamani</h3>
+                    <p class="role">Developer</p>
+                    <p>Joseph destaca por su habilidad en el desarrollo de aplicaciones escalables y robustas.</p>
+                </a>
+                <a href="https://www.linkedin.com/in/sandro-quispesivana/" target="_blank" class="about-card">
+                    <img src="https://media.licdn.com/dms/image/v2/D4E35AQHOIhOJqoSm4g/profile-framedphoto-shrink_400_400/B4EZbwUjj.HMAg-/0/1747788642831?e=1752706800&v=beta&t=XlEVxDf5AWZwNv_Aug_nbSA8rV8WyUYhZnHe5w-PgVc" alt="Augusto">
+                    <h3>Sandro Quispesivana</h3>
+                    <p class="role">Developer</p>
+                    <p>Sandro se especializa en la creación de soluciones eficientes y programación.</p>
+                </a>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-prev">&#10094;</button>
+                <button class="slider-next">&#10095;</button>
+            </div>
+            </div>
         </section>
+
+        <style>
+        #about-us .slider {
+            display: flex;
+            flex-direction: column;  
+            align-items: center;
+            width: 100%;
+        }
+
+        #about-us .tab-container {
+            display: flex;
+            flex-direction: row;      
+            justify-content: center;  
+            align-items: center;      
+            gap: 2rem;            
+            margin-bottom: 1.5rem;    
+        }
+
+        #about-us .tab {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+        #about-us .tab-icon {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #F5C32C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #about-us .tab-icon img {
+            width: 50%;
+            height: 50%;
+        }
+        #about-us .tab-text {
+            margin-top: 8px;
+            font-size: 14px;
+            text-align: center;
+            color: #ffffff;
+        }
+        #about-us .tab.active .tab-icon {
+            background-color: #F5C32C;
+        }
+        #about-us .tab.active .tab-text {
+            color: #F5C32C;
+        }
+
+        #about-us .tab-contents {
+            position: relative;
+            padding-top: 4rem; 
+            width: 100%;
+        }
+        #about-us .tab-content {
+            display: none;
+        }
+        #about-us .tab-content.active {
+            display: block;
+        }
+
+        #about-us .slider .slide {
+            display: none;
+            width: 100%;
+        }
+        #about-us .slider .slide.active-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #about-us .slider-controls {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1700px;
+            margin-top: 20px;
+        }
+        .tab svg{fill:#ffd146}
+        .tab.active svg{fill:#191919}
+        #about-us .slider-prev,
+        #about-us .slider-next {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #about-us .slider-prev:hover,
+        #about-us .slider-next:hover {
+            background-color: #000;
+        }
+        </style>
+
 
         <div class="separating-line"></div>
         
@@ -420,7 +664,7 @@ const translate = (key: string) => t(key, lang);
         <section id="carrousel-images">
         <div class="carousel-content">
             <div class="carousel-header">
-                <h2 data-i18n="carousel.title">{translate('carousel.title')}</h2>
+                <h2 data-i18n="carousel.title" style="color: #191919;">{translate('carousel.title')}</h2>
                 <div class="carousel-controls">
                     <button class="carousel-prev">&#10094;</button>
                     <button class="carousel-next">&#10095;</button>
@@ -808,7 +1052,7 @@ const translate = (key: string) => t(key, lang);
         background-color: #18181b;
         color: white;
         padding: 30px;
-        margin-top: -7rem;
+        margin-top: 0;
         text-align: center;
         border-top-left-radius: 60px;
         border-top-right-radius: 60px;
@@ -819,7 +1063,6 @@ const translate = (key: string) => t(key, lang);
     #features h2,
     #features .p-1 {
         text-align: left;
-        padding-left: 13rem;
         line-height: 0.65;
     }
 
@@ -849,8 +1092,8 @@ const translate = (key: string) => t(key, lang);
     #about-us {
         background-color: transparent;
         border-radius: 20px;
-        padding: 4rem 5rem;
-        max-width: 1100px;
+        padding: 4rem 6rem;
+        max-width: 1500px;
         margin: 5rem auto;
         margin-top: 0.1rem;
         position: relative;
@@ -965,7 +1208,7 @@ const translate = (key: string) => t(key, lang);
         right: 0px;
         display: flex;
         justify-content: space-between;
-        padding: 0 1rem;
+        padding: 0;
         transform: translateY(-50%);
     }
 
