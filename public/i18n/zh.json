@@ -1,0 +1,141 @@
+{
+  "hero": {
+    "title": "不仅仅是交换",
+    "description": "CambiaZo 让您的物品重获新生，同时通过交换和捐赠共建可持续世界。加入我们吧！",
+    "button": "立即交换"
+  },
+  "features": {
+    "title": "关于我们",
+    "subtitle": "了解促成 CambiaZo 的幕后团队。",
+    "about_title": "我们是谁？",
+    "about_text": "CambiaZo 是一个创新平台，让人们交换或捐赠闲置物品。我们的目标是推动可持续生活，让每件物品都有价值和意义。",
+    "members": [
+      {
+        "name": "Ian Santisteban",
+        "role": "Scrum 负责人",
+        "desc": "Ian 在敏捷团队管理和流程优化方面拥有丰富经验。"
+      },
+      {
+        "name": "Jeremy Quispe",
+        "role": "产品负责人",
+        "desc": "Jeremy 专注于战略规划和技术项目协调。"
+      },
+      {
+        "name": "Mathias Mendoza",
+        "role": "开发者",
+        "desc": "Mathias 热衷于打造高效且创新的解决方案。"
+      },
+      {
+        "name": "Joseph Huamani",
+        "role": "开发者",
+        "desc": "Joseph 擅长开发可扩展且稳定的应用。"
+      }
+    ]
+  },
+  "cards": {
+    "title": "探索加入社区的优势",
+    "subtitle": "了解如何通过我们的应用交换或捐赠物品。",
+    "exchange": {
+      "title": "交换网络",
+      "desc": "在可信网络中快速、安全地交换物品。"
+    },
+    "donation": {
+      "title": "捐赠支持",
+      "desc": "将闲置物品捐赠给最需要帮助的人。"
+    }
+  },
+  "carousel": {
+    "title": "看看还能交换什么",
+    "swipe": "滑动查看更多"
+  },
+  "principal": {
+    "title": "可持续交换，",
+    "simplified": "更轻松",
+    "desc": "通过 CambiaZo，您可以交换、捐赠并与他人连接，推动可持续生活，让每件物品继续流动价值。",
+    "security": {
+      "title": "安全保障",
+      "desc": "在安全环境中进行交换与捐赠。"
+    },
+    "items": {
+      "title": "多样物品",
+      "desc": "各种类别的优质物品任您选择。"
+    },
+    "community": {
+      "title": "社区连接",
+      "desc": "与志同道合的用户互动。"
+    },
+    "sustainable": {
+      "title": "可持续",
+      "desc": "每次交换都减少碳足迹。"
+    }
+  },
+  "ongs": {
+    "title": "我们的合作机构",
+    "desc": "我们与众多致力于可持续发展的慈善机构合作，共同回馈社会。"
+  },
+  "plans": {
+    "title": "升级您的体验",
+    "desc": "探索我们的高级计划，享受专属权限、更多功能和优先支持。立即加入，提升您的体验！",
+    "lite": {
+      "name": "基础版",
+      "price": "免费",
+      "desc": "所有用户均可免费使用",
+      "features": [
+        "有限次数的交换。",
+        "适度展示广告。"
+      ],
+      "button": "立即开始"
+    },
+    "premium": {
+      "name": "高级版",
+      "price": "$3.99/月",
+      "desc": "为高级用户打造的专属功能",
+      "features": [
+        "无限次数的交换。",
+        "专属保障服务。"
+      ],
+      "button": "立即开始"
+    },
+    "plus": {
+      "name": "尊享版",
+      "price": "$2.99/月",
+      "desc": "适合热心用户的增强版",
+      "features": [
+        "半无限次数的交换。",
+        "无广告体验。"
+      ],
+      "button": "立即开始"
+    }
+  },
+  "header": {
+    "nav": {
+      "nosotros": "关于我们",
+      "caracteristicas": "特点",
+      "planes": "计划",
+      "contactanos": "联系我们"
+    },
+    "buttons": {
+      "pruebalo": "立即体验",
+      "intercambia": "开始交换"
+    }
+  },
+  "footer": {
+    "logo": "CambiaZo",
+    "rights": "版权所有 © 2025 TechZo",
+    "support": "支持",
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "releases": "版本发布"
+  },
+  "contact": {
+    "title": "加入 CambiaZo！",
+    "desc": "获取最新动态，助力我们的可持续使命。订阅以接收最新消息。",
+    "form": {
+      "name": "名字*",
+      "lastname": "姓氏*",
+      "email": "电子邮箱*",
+      "button": "订阅"
+    },
+    "privacy": "您的信息将受我们的 <a href=\"#\">隐私政策</a> 保护。请阅读 <a href=\"#\">使用条款</a>。"
+  }
+}

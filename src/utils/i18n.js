@@ -2,10 +2,11 @@
 
 import en from '../../public/i18n/en.json';
 import es from '../../public/i18n/es.json';
+import zh from '../../public/i18n/zh.json';
 
 const LANG_KEY = 'lang';
 const DEFAULT_LANG = 'es';
-const resources = { en, es };
+const resources = { en, es,zh };
 
 export function getCurrentLanguage() {
   if (typeof localStorage !== 'undefined') {
