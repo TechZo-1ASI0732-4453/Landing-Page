@@ -364,8 +364,8 @@ nextBtn.addEventListener('click', () => {
         </section>
 
         <section id="features">
-        <h2 style="margin-top:6.5rem; padding-left:13rem;">Sobre Nosotros</h2>
-        <p class="p-1">Descubre quienes son los responsables de que CambiaZo sea una realidad.</p>
+        <h2 style="margin-top:6.5rem; padding-left:13rem;">{translate('features.title')}</h2>
+        <p class="p-1">{translate('features.subtitle')}</p>
         <section id="about-us">
             <div class="slider">
         <div class="slide active-slide" id="slide-1">
@@ -402,7 +402,7 @@ nextBtn.addEventListener('click', () => {
         </svg>
         </div>
 
-            <div class="tab-text">Video about<br>the team</div>
+            <div class="tab-text">{translate('features.video_about')} <br>{translate('features.the_team')}</div>
             </div>
             <div class="tab" data-target="product-video">
             <div class="tab-icon">
@@ -425,7 +425,7 @@ nextBtn.addEventListener('click', () => {
             </svg>
             </div>
 
-            <div class="tab-text">Video about <br>the product</div>
+            <div class="tab-text">{translate('features.video_about')} <br>{translate('features.the_product')}</div>
             </div>
         </div>
 
@@ -435,13 +435,8 @@ nextBtn.addEventListener('click', () => {
             <div class="tab-content active" id="team-video">
             <div class="about-content">
                 <div class="about-info">
-                <h1 class="quienes-somos-h2">¿Quiénes Somos?</h1>
-                <p>
-                    En CambiaZo somos un equipo multidisciplinar apasionado por la innovación y la sostenibilidad.
-                    Combinamos experiencia en Internet de las Cosas, metodologías ágiles y diseño centrado en el usuario
-                    para ofrecer una plataforma de intercambio inteligente. Nuestra misión es conectar objetos físicos al
-                    mundo digital, fomentando un consumo responsable y reduciendo el impacto ambiental.
-                </p>
+                <h1 class="quienes-somos-h2">{translate('features.about_title')}</h1>
+                <p>{translate('features.about_text')}</p>
                 </div>
                 <div class="about-video">
                 <iframe
@@ -460,13 +455,8 @@ nextBtn.addEventListener('click', () => {
             <div class="tab-content" id="product-video">
             <div class="about-content">
                 <div class="about-info">
-                <h1 class="quienes-somos-h2">Sobre el Producto</h1>
-                <p>
-                    CambiaZo integra sensores IoT en cada artículo para monitorizar su estado y ubicación en tiempo real.
-                    Nuestra plataforma web y móvil permite a los usuarios publicar, buscar y concretar intercambios de forma
-                    segura y rápida. Con notificaciones automáticas y trazabilidad completa, reinventamos la manera de
-                    compartir y reutilizar objetos, impulsando una economía circular sostenible.
-                </p>
+                <h1 class="quienes-somos-h2">{translate('features.about_product_title')}</h1>
+                <p>{translate('features.about_product_text')}</p>
                 </div>
                 <div class="about-video">
                 <iframe
@@ -487,33 +477,33 @@ nextBtn.addEventListener('click', () => {
                 <div class="about-cards">
                 <a href="https://www.linkedin.com/in/ian-santisteban-palomino/" target="_blank" class="about-card">
                     <img src="/assets/images/about-us/IanSantisteban.png" alt="Ian">
-                    <h3>Ian Santisteban</h3>
-                    <p class="role">Scrum Master</p>
-                    <p>Ian tiene una amplia experiencia en la gestión de equipos ágiles y optimización de procesos.</p>
+                    <h3>{translate('features.members')[0].name}</h3>
+                    <p class="role">{translate('features.members')[0].role}</p>
+                    <p>{translate('features.members')[0].desc}</p>
                 </a>
                 <a href="https://www.linkedin.com/in/jeremyquispe/" target="_blank" class="about-card">
                     <img src="/assets/images/about-us/JeremyQuispe.jpeg" alt="Jeremy">
-                    <h3>Jeremy Quispe</h3>
-                    <p class="role">Product Owner</p>
-                    <p>Jeremy se especializa en la planificación estratégica y la coordinación de proyectos tecnológicos.</p>
+                    <h3>{translate('features.members')[1].name}</h3>
+                    <p class="role">{translate('features.members')[1].role}</p>
+                    <p>{translate('features.members')[1].desc}</p>
                 </a>
                 <a href="https://www.linkedin.com/in/mathias-mendoza-carri%C3%B3n-08369632b/" target="_blank" class="about-card">
                     <img src="/assets/images/about-us/MathiasMendoza.png" alt="Mathias">
-                    <h3>Mathias Mendoza</h3>
-                    <p class="role">Developer</p>
-                    <p>Mathias es un desarrollador apasionado por crear soluciones innovadoras y eficientes.</p>
+                    <h3>{translate('features.members')[2].name}</h3>
+                    <p class="role">{translate('features.members')[2].role}</p>
+                    <p>{translate('features.members')[2].desc}</p>
                 </a>
                 <a href="https://www.linkedin.com/in/joseph-huamani-mandujano/" target="_blank" class="about-card">
                     <img src="/assets/images/about-us/JosephHuamani.png" alt="Joseph">
-                    <h3>Joseph Huamani</h3>
-                    <p class="role">Developer</p>
-                    <p>Joseph destaca por su habilidad en el desarrollo de aplicaciones escalables y robustas.</p>
+                    <h3>{translate('features.members')[3].name}</h3>
+                    <p class="role">{translate('features.members')[3].role}</p>
+                    <p>{translate('features.members')[3].desc}</p>
                 </a>
                 <a href="https://www.linkedin.com/in/sandro-quispesivana/" target="_blank" class="about-card">
                     <img src="https://media.licdn.com/dms/image/v2/D4E35AQHOIhOJqoSm4g/profile-framedphoto-shrink_400_400/B4EZbwUjj.HMAg-/0/1747788642831?e=1752706800&v=beta&t=XlEVxDf5AWZwNv_Aug_nbSA8rV8WyUYhZnHe5w-PgVc" alt="Augusto">
-                    <h3>Sandro Quispesivana</h3>
-                    <p class="role">Developer</p>
-                    <p>Sandro se especializa en la creación de soluciones eficientes y programación.</p>
+                    <h3>{translate('features.members')[4].name}</h3>
+                    <p class="role">{translate('features.members')[4].role}</p>
+                    <p>{translate('features.members')[4].desc}</p>
                 </a>
                 </div>
             </div>

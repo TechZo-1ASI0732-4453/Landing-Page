@@ -9,6 +9,11 @@
     "subtitle": "Discover who is responsible for making CambiaZo a reality.",
     "about_title": "Who Are We?",
     "about_text": "CambiaZo is an innovative platform that allows people to exchange and donate items they no longer use. Our goal is to promote a more sustainable lifestyle, where every item has a purpose and a positive impact.",
+    "about_product_title": "About the Product",
+    "about_product_text": "Our web and mobile platform allows users to post, search, and complete exchanges quickly and securely. With automatic notifications and full traceability, we reinvent the way of sharing and reusing items, promoting a sustainable circular economy.",
+    "video_about": "Video about",
+    "the_product": "the Product",
+    "the_team": "the Team",
     "members": [
       {
         "name": "Ian Santisteban",
@@ -29,6 +34,11 @@
         "name": "Joseph Huamani",
         "role": "Developer",
         "desc": "Joseph stands out for his skill in developing scalable and robust applications."
+      },
+      {
+        "name": "Sandro Quispesivana",
+        "role": "Developer",
+        "desc": "Sandro se especializa en la creación de soluciones eficientes y programación."
       }
     ]
   },

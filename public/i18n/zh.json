@@ -9,6 +9,11 @@
     "subtitle": "了解促成 CambiaZo 的幕后团队。",
     "about_title": "我们是谁？",
     "about_text": "CambiaZo 是一个创新平台，让人们交换或捐赠闲置物品。我们的目标是推动可持续生活，让每件物品都有价值和意义。",
+    "about_product_title": "关于产品",
+    "about_product_text": "我们的网页和移动平台让用户能够快速、安全地发布、搜索和完成交换。通过自动通知和完整的可追溯性，我们重新定义了共享和再利用物品的方式，推动可持续的循环经济。",
+    "video_about": "关于视频",
+    "the_product": "产品",
+    "the_team": "团队",
     "members": [
       {
         "name": "Ian Santisteban",
@@ -29,6 +34,11 @@
         "name": "Joseph Huamani",
         "role": "开发者",
         "desc": "Joseph 擅长开发可扩展且稳定的应用。"
+      },
+      {
+        "name": "Sandro Quispesivana",
+        "role": "开发人员",
+        "desc": "Sandro 专注于创建高效的解决方案和编程。"
       }
     ]
   },
